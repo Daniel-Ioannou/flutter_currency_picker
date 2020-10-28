@@ -1,3 +1,3 @@
 library currency_picker;
 
-class CurrencyPicker {}
+export 'package:currency_picker/src/currency_list_view.dart';
