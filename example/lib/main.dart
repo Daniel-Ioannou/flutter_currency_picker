@@ -24,14 +24,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Demo for currency picker')),
-      body: CurrencyListView(),
-    );
-
-    return Scaffold(
-      appBar: AppBar(title: const Text('Demo for currency picker')),
       body: Center(
         child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            showCurrencyListBottomSheet(
+              context: context,
+              onSelect: (Currency currency) {
+                print('Select country: ${currency.name}');
+              },
+            );
+          },
           child: const Text('Show currency picker'),
         ),
       ),
