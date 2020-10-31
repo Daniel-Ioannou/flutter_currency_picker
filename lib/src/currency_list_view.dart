@@ -43,16 +43,10 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           Navigator.pop(context);
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
+          padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              // const SizedBox(width: 5),
-              // Text(
-              //    Utils.countryCodeToEmoji(country.countryCode),
-              //   style: const TextStyle(fontSize: 25),
-              // ),
-              // const SizedBox(width: 15),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
