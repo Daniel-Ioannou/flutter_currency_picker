@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
             showCurrencyListBottomSheet(
               context: context,
               onSelect: (Currency currency) {
-                print('Select country: ${currency.name}');
+                print('Select currency: ${currency.name}');
               },
             );
           },
