@@ -4,7 +4,7 @@
 
 A flutter package to select a currency from a list of currencies. 
 
-<img height="600" alt="n1" src="https://raw.githubusercontent.com/Daniel-Ioannou/ flutter_currency_picker/master/assets/ReadMe%20Screenshot.png">
+<img height="600" alt="n1" src="https://raw.githubusercontent.com/Daniel-Ioannou/flutter_currency_picker/master/assets/ReadMe%20Screenshot.png">
 
 ## Getting Started
 
