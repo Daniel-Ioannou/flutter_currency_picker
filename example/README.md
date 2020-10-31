@@ -1,16 +1,36 @@
-# example
+# Currency picker
 
-A example application for currency picker package.
+[![pub package](https://img.shields.io/pub/v/currency_picker.svg)](https://pub.dev/packages/currency_picker)
+
+A flutter package to select a currency from a list of currencies. 
+
+<img height="600" alt="n1" src="https://raw.githubusercontent.com/Daniel-Ioannou/flutter_currency_picker/master/assets/ReadMe%20Screenshot.png">
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+ Add the package to your pubspec.yaml:
 
-A few resources to get you started if this is your first Flutter project:
+ ```yaml
+ currency_picker: ^1.0.0
+ ```
+ 
+ In your dart file, import the library:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+ ```Dart
+ import 'package:currency_picker/currency_picker.dart';
+ ``` 
+  Show currency picker using `showCurrencyListBottomSheet`:
+```Dart
+showCurrencyListBottomSheet(
+   context: context,
+   onSelect: (Currency currency) {
+      print('Select currency: ${currency.name}');
+   },
+);
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Parameters:
+* `onSelect`: Called when a currency is select. The currency picker passes the new value to the callback (required)
+
+## Contributions
+Contributions of any kind are more than welcome! Feel free to fork and improve currency_picker in any way you want, make a pull request, or open an issue.
