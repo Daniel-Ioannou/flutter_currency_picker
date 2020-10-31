@@ -24,7 +24,7 @@ A flutter package to select a currency from a list of currencies.
 showCurrencyListBottomSheet(
    context: context,
    onSelect: (Currency currency) {
-      print('Select country: ${currency.name}');
+      print('Select currency: ${currency.name}');
    },
 );
 ```
@@ -33,4 +33,4 @@ showCurrencyListBottomSheet(
 * `onSelect`: Called when a currency is select. The currency picker passes the new value to the callback (required)
 
 ## Contributions
-Contributions of any kind are more than welcome! Feel free to fork and improve country_code_picker in any way you want, make a pull request, or open an issue.
+Contributions of any kind are more than welcome! Feel free to fork and improve currency_picker in any way you want, make a pull request, or open an issue.
