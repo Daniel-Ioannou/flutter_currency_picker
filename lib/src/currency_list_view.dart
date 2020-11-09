@@ -15,20 +15,58 @@ class CurrencyListView extends StatefulWidget {
 }
 
 class _CurrencyListViewState extends State<CurrencyListView> {
+  List<Currency> _filteredList;
   List<Currency> _currencyList;
+
+  TextEditingController _searchController;
 
   @override
   void initState() {
+    _searchController = TextEditingController();
+
     _currencyList =
         currencies.map((currency) => Currency.from(json: currency)).toList();
+    _filteredList = <Currency>[];
+    _filteredList.addAll(_currencyList);
     super.initState();
   }
 
   @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return ListView(
-      children:
-          _currencyList.map<Widget>((currency) => _listRow(currency)).toList(),
+    return Column(
+      children: <Widget>[
+        const SizedBox(height: 12),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          child: TextField(
+            controller: _searchController,
+            decoration: InputDecoration(
+              labelText: "Search",
+              hintText: "Search",
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: const Color(0xFF8C98A8).withOpacity(0.2),
+                ),
+              ),
+            ),
+            onChanged: _filterSearchResults,
+          ),
+        ),
+        Expanded(
+          child: ListView(
+            children: _filteredList
+                .map<Widget>((currency) => _listRow(currency))
+                .toList(),
+          ),
+        ),
+      ],
     );
   }
 
@@ -77,5 +115,21 @@ class _CurrencyListViewState extends State<CurrencyListView> {
         ),
       ),
     );
+  }
+
+  void _filterSearchResults(String query) {
+    List<Currency> _searchResult = <Currency>[];
+
+    if (query.isEmpty) {
+      _searchResult.addAll(_currencyList);
+    } else {
+      _searchResult = _currencyList
+          .where((c) =>
+              c.name.toLowerCase().contains(query.toLowerCase()) ||
+              c.code.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+    }
+
+    setState(() => _filteredList = _searchResult);
   }
 }
