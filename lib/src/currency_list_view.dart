@@ -1,6 +1,6 @@
+import 'package:currency_picker/currency_picker.dart';
 import 'package:flutter/material.dart';
 
-import 'currencies.dart';
 import 'currency.dart';
 
 class CurrencyListView extends StatefulWidget {
@@ -15,12 +15,12 @@ class CurrencyListView extends StatefulWidget {
 }
 
 class _CurrencyListViewState extends State<CurrencyListView> {
+  final CurrencyService _currencyService = CurrencyService();
   List<Currency> _currencyList;
 
   @override
   void initState() {
-    _currencyList =
-        currencies.map((currency) => Currency.from(json: currency)).toList();
+    _currencyList = _currencyService.getAll();
     super.initState();
   }
 
@@ -43,7 +43,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           Navigator.pop(context);
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+          padding: const EdgeInsets.symmetric(vertical: 9.0, horizontal: 8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -54,12 +54,12 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                   children: [
                     Text(
                       currency.code,
-                      style: const TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 17),
                     ),
                     Text(
                       currency.name,
                       style: TextStyle(
-                          fontSize: 14, color: Theme.of(context).hintColor),
+                          fontSize: 15, color: Theme.of(context).hintColor),
                     ),
                   ],
                 ),
@@ -68,7 +68,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   currency.symbol,
-                  style: const TextStyle(fontSize: 14),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
               // const SizedBox(width: 5),
