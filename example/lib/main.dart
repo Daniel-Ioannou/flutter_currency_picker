@@ -32,6 +32,7 @@ class HomePage extends StatelessWidget {
               onSelect: (Currency currency) {
                 print('Select currency: ${currency.name}');
               },
+              currencyFilter: ['cad', 'cop', 'dop'],
             );
           },
           child: const Text('Show currency picker'),

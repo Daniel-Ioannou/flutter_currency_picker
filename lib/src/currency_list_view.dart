@@ -30,6 +30,15 @@ class _CurrencyListViewState extends State<CurrencyListView> {
     _searchController = TextEditingController();
     _currencyList = _currencyService.getAll();
     _filteredList = <Currency>[];
+
+    if (widget.currencyFilter != null) {
+      final List<String> currencyFilter =
+          widget.currencyFilter.map((code) => code.toUpperCase()).toList();
+
+      _currencyList
+          .removeWhere((element) => !currencyFilter.contains(element.code));
+    }
+
     _filteredList.addAll(_currencyList);
     super.initState();
   }

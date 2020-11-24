@@ -18,6 +18,7 @@ void showCurrencyPicker({
   currency_list.showCurrencyListBottomSheet(
     context: context,
     onSelect: onSelect,
+    currencyFilter: currencyFilter,
   );
 }
 
