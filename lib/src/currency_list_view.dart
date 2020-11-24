@@ -9,7 +9,10 @@ class CurrencyListView extends StatefulWidget {
   /// The currency picker passes the new value to the callback.
   final ValueChanged<Currency> onSelect;
 
-  const CurrencyListView({Key key, this.onSelect}) : super(key: key);
+  final List<String> currencyFilter;
+
+  const CurrencyListView({Key key, this.onSelect, this.currencyFilter})
+      : super(key: key);
   @override
   _CurrencyListViewState createState() => _CurrencyListViewState();
 }

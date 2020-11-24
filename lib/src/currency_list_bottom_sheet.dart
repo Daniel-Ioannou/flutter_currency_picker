@@ -6,6 +6,7 @@ import 'currency_list_view.dart';
 void showCurrencyListBottomSheet({
   @required BuildContext context,
   @required ValueChanged<Currency> onSelect,
+  List<String> currencyFilter,
 }) {
   assert(context != null);
   assert(onSelect != null);
