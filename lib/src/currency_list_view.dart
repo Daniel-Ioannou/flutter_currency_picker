@@ -9,7 +9,13 @@ class CurrencyListView extends StatefulWidget {
   /// The currency picker passes the new value to the callback.
   final ValueChanged<Currency> onSelect;
 
-  const CurrencyListView({Key key, this.onSelect}) : super(key: key);
+  /// Can be used to uses filter the Currency list (optional).
+  ///
+  /// It takes a list of Currency code.
+  final List<String> currencyFilter;
+
+  const CurrencyListView({Key key, this.onSelect, this.currencyFilter})
+      : super(key: key);
   @override
   _CurrencyListViewState createState() => _CurrencyListViewState();
 }
@@ -27,6 +33,15 @@ class _CurrencyListViewState extends State<CurrencyListView> {
     _searchController = TextEditingController();
     _currencyList = _currencyService.getAll();
     _filteredList = <Currency>[];
+
+    if (widget.currencyFilter != null) {
+      final List<String> currencyFilter =
+          widget.currencyFilter.map((code) => code.toUpperCase()).toList();
+
+      _currencyList
+          .removeWhere((element) => !currencyFilter.contains(element.code));
+    }
+
     _filteredList.addAll(_currencyList);
     super.initState();
   }

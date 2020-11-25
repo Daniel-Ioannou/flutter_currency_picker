@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            showCurrencyListBottomSheet(
+            showCurrencyPicker(
               context: context,
               onSelect: (Currency currency) {
                 print('Select currency: ${currency.name}');

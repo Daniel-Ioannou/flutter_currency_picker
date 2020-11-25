@@ -6,6 +6,7 @@ import 'currency_list_view.dart';
 void showCurrencyListBottomSheet({
   @required BuildContext context,
   @required ValueChanged<Currency> onSelect,
+  List<String> currencyFilter,
 }) {
   assert(context != null);
   assert(onSelect != null);
@@ -13,13 +14,14 @@ void showCurrencyListBottomSheet({
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
-    builder: (_) => _builder(context, onSelect),
+    builder: (_) => _builder(context, onSelect, currencyFilter),
   );
 }
 
 Widget _builder(
   BuildContext context,
   ValueChanged<Currency> onSelect,
+  List<String> currencyFilter,
 ) {
   final device = MediaQuery.of(context).size.height;
   final statusBarHeight = MediaQuery.of(context).padding.top;
@@ -45,6 +47,7 @@ Widget _builder(
     ),
     child: CurrencyListView(
       onSelect: onSelect,
+      currencyFilter: currencyFilter,
     ),
   );
 }
