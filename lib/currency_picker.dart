@@ -12,12 +12,14 @@ void showCurrencyPicker({
   @required BuildContext context,
   @required ValueChanged<Currency> onSelect,
   List<String> currencyFilter,
+  bool showFlag = true,
 }) {
   assert(context != null);
   assert(onSelect != null);
   currency_list.showCurrencyListBottomSheet(
     context: context,
     onSelect: onSelect,
+    showFlag: showFlag,
     currencyFilter: currencyFilter,
   );
 }

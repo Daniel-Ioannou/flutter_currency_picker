@@ -14,8 +14,18 @@ class CurrencyListView extends StatefulWidget {
   /// It takes a list of Currency code.
   final List<String> currencyFilter;
 
-  const CurrencyListView({Key key, this.onSelect, this.currencyFilter})
-      : super(key: key);
+  /// Shows flag for each currency (optional).
+  ///
+  /// Defaults true.
+  final bool showFlag;
+
+  const CurrencyListView({
+    Key key,
+    this.onSelect,
+    this.currencyFilter,
+    this.showFlag = true,
+  }) : super(key: key);
+
   @override
   _CurrencyListViewState createState() => _CurrencyListViewState();
 }
@@ -28,10 +38,24 @@ class _CurrencyListViewState extends State<CurrencyListView> {
 
   TextEditingController _searchController;
 
+  static String countryCodeToEmoji(String countryCode) {
+    // 0x41 is Letter A
+    // 0x1F1E6 is Regional Indicator Symbol Letter A
+    // Example :
+    // firstLetter U => 20 + 0x1F1E6
+    // secondLetter S => 18 + 0x1F1E6
+    // See: https://en.wikipedia.org/wiki/Regional_Indicator_Symbol
+    final int firstLetter = countryCode.codeUnitAt(0) - 0x41 + 0x1F1E6;
+    final int secondLetter = countryCode.codeUnitAt(1) - 0x41 + 0x1F1E6;
+    return String.fromCharCode(firstLetter) + String.fromCharCode(secondLetter);
+  }
+
   @override
   void initState() {
     _searchController = TextEditingController();
+
     _currencyList = _currencyService.getAll();
+
     _filteredList = <Currency>[];
 
     if (widget.currencyFilter != null) {
@@ -100,19 +124,34 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: Row(
                   children: [
-                    Text(
-                      currency.code,
-                      style: const TextStyle(fontSize: 17),
-                    ),
-                    Text(
-                      currency.name,
-                      style: TextStyle(
-                          fontSize: 15, color: Theme.of(context).hintColor),
+                    const SizedBox(width: 15),
+                    if (widget.showFlag) ...[
+                      Text(
+                        countryCodeToEmoji(currency.flag),
+                        style: const TextStyle(fontSize: 25),
+                      ),
+                      const SizedBox(width: 15),
+                    ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            currency.code,
+                            style: const TextStyle(fontSize: 17),
+                          ),
+                          Text(
+                            currency.name,
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Theme.of(context).hintColor,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -124,7 +163,6 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                   style: const TextStyle(fontSize: 18),
                 ),
               ),
-              // const SizedBox(width: 5),
             ],
           ),
         ),
