@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'currency.dart';
 import 'currency_service.dart';
+import 'currency_utils.dart';
 
 class CurrencyListView extends StatefulWidget {
   /// Called when a currency is select.
@@ -37,18 +38,6 @@ class _CurrencyListViewState extends State<CurrencyListView> {
   List<Currency> _currencyList;
 
   TextEditingController _searchController;
-
-  static String countryCodeToEmoji(String countryCode) {
-    // 0x41 is Letter A
-    // 0x1F1E6 is Regional Indicator Symbol Letter A
-    // Example :
-    // firstLetter U => 20 + 0x1F1E6
-    // secondLetter S => 18 + 0x1F1E6
-    // See: https://en.wikipedia.org/wiki/Regional_Indicator_Symbol
-    final int firstLetter = countryCode.codeUnitAt(0) - 0x41 + 0x1F1E6;
-    final int secondLetter = countryCode.codeUnitAt(1) - 0x41 + 0x1F1E6;
-    return String.fromCharCode(firstLetter) + String.fromCharCode(secondLetter);
-  }
 
   @override
   void initState() {
@@ -130,7 +119,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                     const SizedBox(width: 15),
                     if (widget.showFlag) ...[
                       Text(
-                        countryCodeToEmoji(currency.flag),
+                        CurrencyUtils.countryCodeToEmoji(currency),
                         style: const TextStyle(fontSize: 25),
                       ),
                       const SizedBox(width: 15),
