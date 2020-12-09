@@ -1,3 +1,17 @@
+
+## [1.0.3] - 09 Dec 2020
+
+* Add option to show flag for each currency.
+    ```Dart
+    showCurrencyPicker(
+      context: context,
+      showFlag: true,
+      onSelect: (Currency currency) {
+        print('Select currency: ${currency.name}');
+      },
+    );
+    ``` 
+
 ## [1.0.2] - 25 Nov 2020
 
 * Deprecated showCurrencyListBottomSheet. Use `showCurrencyPicker` instead.
