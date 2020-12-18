@@ -20,6 +20,11 @@ class CurrencyListView extends StatefulWidget {
   /// Defaults true.
   final bool showFlag;
 
+  /// Shows currency name (optional).
+  ///
+  /// Defaults true.
+  final bool showCurrencyName;
+
   /// Hint of the search TextField (optional).
   ///
   /// Defaults Search.
@@ -30,6 +35,7 @@ class CurrencyListView extends StatefulWidget {
     this.onSelect,
     this.currencyFilter,
     this.searchHint,
+    this.showCurrencyName = true,
     this.showFlag = true,
   }) : super(key: key);
 
@@ -138,13 +144,15 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                             currency.code,
                             style: const TextStyle(fontSize: 17),
                           ),
-                          Text(
-                            currency.name,
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Theme.of(context).hintColor,
+                          if (widget.showCurrencyName) ...[
+                            Text(
+                              currency.name,
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Theme.of(context).hintColor,
+                              ),
                             ),
-                          ),
+                          ]
                         ],
                       ),
                     ),

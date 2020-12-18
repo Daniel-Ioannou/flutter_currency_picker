@@ -15,14 +15,16 @@ void showCurrencyPicker({
   List<String> currencyFilter,
   String searchHint,
   bool showFlag = true,
+  bool showCurrencyName = true,
 }) {
   assert(context != null);
   assert(onSelect != null);
   currency_list.showCurrencyListBottomSheet(
     context: context,
     onSelect: onSelect,
-    showFlag: showFlag,
     searchHint: searchHint,
+    showFlag: showFlag,
+    showCurrencyName: showCurrencyName,
     currencyFilter: currencyFilter,
   );
 }

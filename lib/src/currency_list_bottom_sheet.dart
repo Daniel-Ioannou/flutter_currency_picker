@@ -9,6 +9,7 @@ void showCurrencyListBottomSheet({
   List<String> currencyFilter,
   String searchHint,
   bool showFlag = true,
+  bool showCurrencyName = true,
 }) {
   assert(context != null);
   assert(onSelect != null);
@@ -22,6 +23,7 @@ void showCurrencyListBottomSheet({
       currencyFilter,
       searchHint,
       showFlag,
+      showCurrencyName,
     ),
   );
 }
@@ -32,6 +34,7 @@ Widget _builder(
   List<String> currencyFilter,
   String searchHint,
   bool showFlag,
+  bool showCurrencyName,
 ) {
   final device = MediaQuery.of(context).size.height;
   final statusBarHeight = MediaQuery.of(context).padding.top;
@@ -57,8 +60,9 @@ Widget _builder(
     ),
     child: CurrencyListView(
       onSelect: onSelect,
-      showFlag: showFlag,
       searchHint: searchHint,
+      showFlag: showFlag,
+      showCurrencyName: showCurrencyName,
       currencyFilter: currencyFilter,
     ),
   );
