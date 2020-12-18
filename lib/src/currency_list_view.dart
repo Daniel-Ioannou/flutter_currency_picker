@@ -20,10 +20,16 @@ class CurrencyListView extends StatefulWidget {
   /// Defaults true.
   final bool showFlag;
 
+  /// Hint of the search TextField (optional).
+  ///
+  /// Defaults Search.
+  final String searchHint;
+
   const CurrencyListView({
     Key key,
     this.onSelect,
     this.currencyFilter,
+    this.searchHint,
     this.showFlag = true,
   }) : super(key: key);
 
@@ -75,8 +81,8 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: TextField(
             controller: _searchController,
             decoration: InputDecoration(
-              labelText: "Search",
-              hintText: "Search",
+              labelText: widget.searchHint ?? "Search",
+              hintText: widget.searchHint ?? "Search",
               prefixIcon: const Icon(Icons.search),
               border: OutlineInputBorder(
                 borderSide: BorderSide(

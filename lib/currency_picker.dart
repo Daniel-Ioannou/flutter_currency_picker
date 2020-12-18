@@ -13,6 +13,7 @@ void showCurrencyPicker({
   @required BuildContext context,
   @required ValueChanged<Currency> onSelect,
   List<String> currencyFilter,
+  String searchHint,
   bool showFlag = true,
 }) {
   assert(context != null);
@@ -21,6 +22,7 @@ void showCurrencyPicker({
     context: context,
     onSelect: onSelect,
     showFlag: showFlag,
+    searchHint: searchHint,
     currencyFilter: currencyFilter,
   );
 }

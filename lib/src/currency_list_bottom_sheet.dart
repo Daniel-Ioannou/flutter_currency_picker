@@ -7,6 +7,7 @@ void showCurrencyListBottomSheet({
   @required BuildContext context,
   @required ValueChanged<Currency> onSelect,
   List<String> currencyFilter,
+  String searchHint,
   bool showFlag = true,
 }) {
   assert(context != null);
@@ -15,7 +16,13 @@ void showCurrencyListBottomSheet({
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
-    builder: (_) => _builder(context, onSelect, currencyFilter, showFlag),
+    builder: (_) => _builder(
+      context,
+      onSelect,
+      currencyFilter,
+      searchHint,
+      showFlag,
+    ),
   );
 }
 
@@ -23,6 +30,7 @@ Widget _builder(
   BuildContext context,
   ValueChanged<Currency> onSelect,
   List<String> currencyFilter,
+  String searchHint,
   bool showFlag,
 ) {
   final device = MediaQuery.of(context).size.height;
@@ -50,6 +58,7 @@ Widget _builder(
     child: CurrencyListView(
       onSelect: onSelect,
       showFlag: showFlag,
+      searchHint: searchHint,
       currencyFilter: currencyFilter,
     ),
   );
