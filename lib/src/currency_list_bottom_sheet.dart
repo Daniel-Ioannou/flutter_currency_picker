@@ -10,6 +10,7 @@ void showCurrencyListBottomSheet({
   String searchHint,
   bool showFlag = true,
   bool showCurrencyName = true,
+  bool showCurrencyCode = true,
 }) {
   assert(context != null);
   assert(onSelect != null);
@@ -24,6 +25,7 @@ void showCurrencyListBottomSheet({
       searchHint,
       showFlag,
       showCurrencyName,
+      showCurrencyCode,
     ),
   );
 }
@@ -35,6 +37,7 @@ Widget _builder(
   String searchHint,
   bool showFlag,
   bool showCurrencyName,
+  bool showCurrencyCode,
 ) {
   final device = MediaQuery.of(context).size.height;
   final statusBarHeight = MediaQuery.of(context).padding.top;
@@ -63,6 +66,7 @@ Widget _builder(
       searchHint: searchHint,
       showFlag: showFlag,
       showCurrencyName: showCurrencyName,
+      showCurrencyCode: showCurrencyCode,
       currencyFilter: currencyFilter,
     ),
   );

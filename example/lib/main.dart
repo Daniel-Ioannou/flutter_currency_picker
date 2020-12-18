@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
               context: context,
               showFlag: true,
               showCurrencyName: true,
+              showCurrencyCode: true,
               onSelect: (Currency currency) {
                 print('Select currency: ${currency.name}');
               },

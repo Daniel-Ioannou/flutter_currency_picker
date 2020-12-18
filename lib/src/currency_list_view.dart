@@ -21,9 +21,16 @@ class CurrencyListView extends StatefulWidget {
   final bool showFlag;
 
   /// Shows currency name (optional).
+  /// [showCurrencyName] and [showCurrencyCode] cannot be both false
   ///
   /// Defaults true.
   final bool showCurrencyName;
+
+  /// Shows currency code (optional).
+  /// [showCurrencyCode] and [showCurrencyName] cannot be both false
+  ///
+  /// Defaults true.
+  final bool showCurrencyCode;
 
   /// Hint of the search TextField (optional).
   ///
@@ -35,6 +42,7 @@ class CurrencyListView extends StatefulWidget {
     this.onSelect,
     this.currencyFilter,
     this.searchHint,
+    this.showCurrencyCode = true,
     this.showCurrencyName = true,
     this.showFlag = true,
   }) : super(key: key);
@@ -140,17 +148,21 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            currency.code,
-                            style: const TextStyle(fontSize: 17),
-                          ),
+                          if (widget.showCurrencyCode) ...[
+                            Text(
+                              currency.code,
+                              style: const TextStyle(fontSize: 17),
+                            ),
+                          ],
                           if (widget.showCurrencyName) ...[
                             Text(
                               currency.name,
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Theme.of(context).hintColor,
-                              ),
+                              style: widget.showCurrencyCode
+                                  ? TextStyle(
+                                      fontSize: 15,
+                                      color: Theme.of(context).hintColor,
+                                    )
+                                  : const TextStyle(fontSize: 17),
                             ),
                           ]
                         ],
