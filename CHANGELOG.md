@@ -1,3 +1,22 @@
+## [1.0.4] - 22 Dec 2020
+
+ * `searchHint`: Option to customize hint of the search TextField
+ * `showCurrencyName`: Option to show/hide the currency name
+ * `showCurrencyCode`: Option to show/hide the currency code
+```Dart
+showCurrencyPicker(
+   context: context,
+   showFlag: true,
+   searchHint: 'Search here',
+   showCurrencyName: true,
+   showCurrencyCode: true,
+   onSelect: (Currency currency) {
+      print('Select currency: ${currency.name}');
+   },
+);
+```
+
+Note: `showCurrencyCode` and `showCurrencyName` cannot be both false
 
 ## [1.0.3] - 09 Dec 2020
 

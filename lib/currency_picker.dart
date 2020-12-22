@@ -13,14 +13,22 @@ void showCurrencyPicker({
   @required BuildContext context,
   @required ValueChanged<Currency> onSelect,
   List<String> currencyFilter,
+  String searchHint,
   bool showFlag = true,
+  bool showCurrencyName = true,
+  bool showCurrencyCode = true,
 }) {
   assert(context != null);
   assert(onSelect != null);
+  assert(showCurrencyName || showCurrencyCode,
+      'showCurrencyName and showCurrencyCode cannot be both false');
   currency_list.showCurrencyListBottomSheet(
     context: context,
     onSelect: onSelect,
+    searchHint: searchHint,
     showFlag: showFlag,
+    showCurrencyName: showCurrencyName,
+    showCurrencyCode: showCurrencyCode,
     currencyFilter: currencyFilter,
   );
 }

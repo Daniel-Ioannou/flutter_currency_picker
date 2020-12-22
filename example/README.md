@@ -24,6 +24,8 @@ A flutter package to select a currency from a list of currencies.
 showCurrencyPicker(
    context: context,
    showFlag: true,
+   showCurrencyName: true,
+   showCurrencyCode: true,
    onSelect: (Currency currency) {
       print('Select currency: ${currency.name}');
    },
@@ -33,6 +35,9 @@ showCurrencyPicker(
 ### Parameters:
 * `onSelect`: Called when a currency is select. The currency picker passes the new value to the callback (required)
 * `showFlag`: Shows flag for each currency. Default value `true` (optional). 
+* `searchHint`: Option to customize hint of the search TextField (optional).
+* `showCurrencyName`: Option to show/hide the currency name, default value `true` (optional).
+* `showCurrencyCode`: Option to show/hide the currency code, default value `true` (optional).
 * `currencyFilter`: Can be used to uses filter the Currency list (optional).
   ```Dart
    showCurrencyPicker(

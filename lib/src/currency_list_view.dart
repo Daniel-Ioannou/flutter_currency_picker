@@ -20,10 +20,30 @@ class CurrencyListView extends StatefulWidget {
   /// Defaults true.
   final bool showFlag;
 
+  /// Shows currency name (optional).
+  /// [showCurrencyName] and [showCurrencyCode] cannot be both false
+  ///
+  /// Defaults true.
+  final bool showCurrencyName;
+
+  /// Shows currency code (optional).
+  /// [showCurrencyCode] and [showCurrencyName] cannot be both false
+  ///
+  /// Defaults true.
+  final bool showCurrencyCode;
+
+  /// Hint of the search TextField (optional).
+  ///
+  /// Defaults Search.
+  final String searchHint;
+
   const CurrencyListView({
     Key key,
     this.onSelect,
     this.currencyFilter,
+    this.searchHint,
+    this.showCurrencyCode = true,
+    this.showCurrencyName = true,
     this.showFlag = true,
   }) : super(key: key);
 
@@ -75,8 +95,8 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: TextField(
             controller: _searchController,
             decoration: InputDecoration(
-              labelText: "Search",
-              hintText: "Search",
+              labelText: widget.searchHint ?? "Search",
+              hintText: widget.searchHint ?? "Search",
               prefixIcon: const Icon(Icons.search),
               border: OutlineInputBorder(
                 borderSide: BorderSide(
@@ -128,17 +148,23 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            currency.code,
-                            style: const TextStyle(fontSize: 17),
-                          ),
-                          Text(
-                            currency.name,
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Theme.of(context).hintColor,
+                          if (widget.showCurrencyCode) ...[
+                            Text(
+                              currency.code,
+                              style: const TextStyle(fontSize: 17),
                             ),
-                          ),
+                          ],
+                          if (widget.showCurrencyName) ...[
+                            Text(
+                              currency.name,
+                              style: widget.showCurrencyCode
+                                  ? TextStyle(
+                                      fontSize: 15,
+                                      color: Theme.of(context).hintColor,
+                                    )
+                                  : const TextStyle(fontSize: 17),
+                            ),
+                          ]
                         ],
                       ),
                     ),
