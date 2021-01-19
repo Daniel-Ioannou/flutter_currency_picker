@@ -1,4 +1,12 @@
+//Order by Most traded currencies: https://en.wikipedia.org/wiki/Template:Most_traded_currencies
 List<Map<String, String>> currencies = [
+  {
+    "code": "USD",
+    "name": "United States Dollar",
+    "symbol": "\$",
+    "flag": "USD",
+    "number": "840"
+  },
   {
     "code": "EUR",
     "name": "Euro",
@@ -7,11 +15,11 @@ List<Map<String, String>> currencies = [
     "number": "978"
   },
   {
-    "code": "USD",
-    "name": "United States Dollar",
-    "symbol": "\$",
-    "flag": "USD",
-    "number": "840"
+    "code": "JPY",
+    "name": "Japanese Yen",
+    "symbol": "¥",
+    "flag": "JPY",
+    "number": "392"
   },
   {
     "code": "GBP",
@@ -21,11 +29,102 @@ List<Map<String, String>> currencies = [
     "number": "826"
   },
   {
-    "code": "CZK",
-    "name": "Czech Koruna",
-    "symbol": "Kč",
-    "flag": "CZK",
-    "number": "203"
+    "code": "AUD",
+    "name": "Australian Dollar",
+    "symbol": "\$",
+    "flag": "AUD",
+    "number": "036"
+  },
+  {
+    "code": "CAD",
+    "name": "Canada Dollar",
+    "symbol": "\$",
+    "flag": "CAD",
+    "number": "124"
+  },
+  {
+    "code": "CHF",
+    "name": "Switzerland Franc",
+    "symbol": "CHF",
+    "flag": "CHF",
+    "number": "756"
+  },
+  {
+    "code": "CNY",
+    "name": "China Yuan Renminbi",
+    "symbol": "¥",
+    "flag": "CNY",
+    "number": "156"
+  },
+  {
+    "code": "HKD",
+    "name": "Hong Kong Dollar",
+    "symbol": "\$",
+    "flag": "HKD",
+    "number": "344"
+  },
+  {
+    "code": "NZD",
+    "name": "New Zealand Dollar",
+    "symbol": "\$",
+    "flag": "NZD",
+    "number": "554"
+  },
+  {
+    "code": "SEK",
+    "name": "Sweden Krona",
+    "symbol": "kr",
+    "flag": "SEK",
+    "number": "752"
+  },
+  {
+    "code": "KRW",
+    "name": "Korea (South) Won",
+    "symbol": "₩",
+    "flag": "KRW",
+    "number": "410"
+  },
+  {
+    "code": "SGD",
+    "name": "Singapore Dollar",
+    "symbol": "\$",
+    "flag": "SGD",
+    "number": "702"
+  },
+  {
+    "code": "NOK",
+    "name": "Norway Krone",
+    "symbol": "kr",
+    "flag": "NOK",
+    "number": "578"
+  },
+  {
+    "code": "MXN",
+    "name": "Mexico Peso",
+    "symbol": "\$",
+    "flag": "MXN",
+    "number": "484"
+  },
+  {
+    "code": "INR",
+    "name": "Indian Rupee",
+    "symbol": "₹",
+    "flag": "INR",
+    "number": "356"
+  },
+  {
+    "code": "RUB",
+    "name": "Russia Ruble",
+    "symbol": "₽",
+    "flag": "RUB",
+    "number": "643"
+  },
+  {
+    "code": "ZAR",
+    "name": "South Africa Rand",
+    "symbol": "R",
+    "flag": "ZAR",
+    "number": "710"
   },
   {
     "code": "TRY",
@@ -35,11 +134,116 @@ List<Map<String, String>> currencies = [
     "number": "949"
   },
   {
+    "code": "BRL",
+    "name": "Brazil Real",
+    "symbol": "R\$",
+    "flag": "BRL",
+    "number": "986"
+  },
+  {
+    "code": "TWD",
+    "name": "Taiwan New Dollar",
+    "symbol": "NT\$",
+    "flag": "TWD",
+    "number": "901"
+  },
+  {
+    "code": "DKK",
+    "name": "Denmark Krone",
+    "symbol": "kr",
+    "flag": "DKK",
+    "number": "208"
+  },
+  {
+    "code": "PLN",
+    "name": "Poland Zloty",
+    "symbol": "zł",
+    "flag": "PLN",
+    "number": "985"
+  },
+  {
+    "code": "THB",
+    "name": "Thailand Baht",
+    "symbol": "฿",
+    "flag": "THB",
+    "number": "764"
+  },
+  {
+    "code": "IDR",
+    "name": "Indonesia Rupiah",
+    "symbol": "Rp",
+    "flag": "IDR",
+    "number": "360"
+  },
+  {
+    "code": "HUF",
+    "name": "Hungary Forint",
+    "symbol": "Ft",
+    "flag": "HUF",
+    "number": "348"
+  },
+  {
+    "code": "CZK",
+    "name": "Czech Koruna",
+    "symbol": "Kč",
+    "flag": "CZK",
+    "number": "203"
+  },
+  {
+    "code": "ILS",
+    "name": "Israel Shekel",
+    "symbol": "₪",
+    "flag": "ILS",
+    "number": "376"
+  },
+  {
+    "code": "CLP",
+    "name": "Chile Peso",
+    "symbol": "\$",
+    "flag": "CLP",
+    "number": "152"
+  },
+  {
+    "code": "PHP",
+    "name": "Philippines Peso",
+    "symbol": "₱",
+    "flag": "PHP",
+    "number": "608"
+  },
+  {
     "code": "AED",
     "name": "Emirati Dirham",
     "symbol": "د.إ",
     "flag": "AED",
     "number": "784"
+  },
+  {
+    "code": "COP",
+    "name": "Colombia Peso",
+    "symbol": "\$",
+    "flag": "COP",
+    "number": "170"
+  },
+  {
+    "code": "SAR",
+    "name": "Saudi Arabia Riyal",
+    "symbol": "﷼",
+    "flag": "SAR",
+    "number": "682"
+  },
+  {
+    "code": "MYR",
+    "name": "Malaysia Ringgit",
+    "symbol": "RM",
+    "flag": "MYR",
+    "number": "458"
+  },
+  {
+    "code": "RON",
+    "name": "Romania Leu",
+    "symbol": "lei",
+    "flag": "RON",
+    "number": "946"
   },
   {
     "code": "AFN",
@@ -54,13 +258,6 @@ List<Map<String, String>> currencies = [
     "symbol": "\$",
     "flag": "ARS",
     "number": "032"
-  },
-  {
-    "code": "AUD",
-    "name": "Australian Dollar",
-    "symbol": "\$",
-    "flag": "AUD",
-    "number": "036"
   },
   {
     "code": "BBD",
@@ -112,13 +309,6 @@ List<Map<String, String>> currencies = [
     "number": "068"
   },
   {
-    "code": "BRL",
-    "name": "Brazil Real",
-    "symbol": "R\$",
-    "flag": "BRL",
-    "number": "986"
-  },
-  {
     "code": "BTN",
     "name": "Bhutanese Ngultrum",
     "symbol": "Nu.",
@@ -133,53 +323,11 @@ List<Map<String, String>> currencies = [
     "number": "084"
   },
   {
-    "code": "CAD",
-    "name": "Canada Dollar",
-    "symbol": "\$",
-    "flag": "CAD",
-    "number": "124"
-  },
-  {
-    "code": "CHF",
-    "name": "Switzerland Franc",
-    "symbol": "CHF",
-    "flag": "CHF",
-    "number": "756"
-  },
-  {
-    "code": "CLP",
-    "name": "Chile Peso",
-    "symbol": "\$",
-    "flag": "CLP",
-    "number": "152"
-  },
-  {
-    "code": "CNY",
-    "name": "China Yuan Renminbi",
-    "symbol": "¥",
-    "flag": "CNY",
-    "number": "156"
-  },
-  {
-    "code": "COP",
-    "name": "Colombia Peso",
-    "symbol": "\$",
-    "flag": "COP",
-    "number": "170"
-  },
-  {
     "code": "CRC",
     "name": "Costa Rica Colon",
     "symbol": "₡",
     "flag": "CRC",
     "number": "188"
-  },
-  {
-    "code": "DKK",
-    "name": "Denmark Krone",
-    "symbol": "kr",
-    "flag": "DKK",
-    "number": "208"
   },
   {
     "code": "DOP",
@@ -231,46 +379,11 @@ List<Map<String, String>> currencies = [
     "number": "328"
   },
   {
-    "code": "HKD",
-    "name": "Hong Kong Dollar",
-    "symbol": "\$",
-    "flag": "HKD",
-    "number": "344"
-  },
-  {
     "code": "HRK",
     "name": "Croatia Kuna",
     "symbol": "kn",
     "flag": "HRK",
     "number": "191"
-  },
-  {
-    "code": "HUF",
-    "name": "Hungary Forint",
-    "symbol": "Ft",
-    "flag": "HUF",
-    "number": "348"
-  },
-  {
-    "code": "IDR",
-    "name": "Indonesia Rupiah",
-    "symbol": "Rp",
-    "flag": "IDR",
-    "number": "360"
-  },
-  {
-    "code": "ILS",
-    "name": "Israel Shekel",
-    "symbol": "₪",
-    "flag": "ILS",
-    "number": "376"
-  },
-  {
-    "code": "INR",
-    "name": "Indian Rupee",
-    "symbol": "₹",
-    "flag": "INR",
-    "number": "356"
   },
   {
     "code": "ISK",
@@ -287,25 +400,11 @@ List<Map<String, String>> currencies = [
     "number": "388"
   },
   {
-    "code": "JPY",
-    "name": "Japanese Yen",
-    "symbol": "¥",
-    "flag": "JPY",
-    "number": "392"
-  },
-  {
     "code": "KES",
     "name": "Kenyan Shilling",
     "symbol": "KSh",
     "flag": "KES",
     "number": "404"
-  },
-  {
-    "code": "KRW",
-    "name": "Korea (South) Won",
-    "symbol": "₩",
-    "flag": "KRW",
-    "number": "410"
   },
   {
     "code": "KWD",
@@ -399,20 +498,6 @@ List<Map<String, String>> currencies = [
     "number": "454"
   },
   {
-    "code": "MXN",
-    "name": "Mexico Peso",
-    "symbol": "\$",
-    "flag": "MXN",
-    "number": "484"
-  },
-  {
-    "code": "MYR",
-    "name": "Malaysia Ringgit",
-    "symbol": "RM",
-    "flag": "MYR",
-    "number": "458"
-  },
-  {
     "code": "MZN",
     "name": "Mozambique Metical",
     "symbol": "MT",
@@ -441,25 +526,11 @@ List<Map<String, String>> currencies = [
     "number": "558"
   },
   {
-    "code": "NOK",
-    "name": "Norway Krone",
-    "symbol": "kr",
-    "flag": "NOK",
-    "number": "578"
-  },
-  {
     "code": "NPR",
     "name": "Nepal Rupee",
     "symbol": "₨",
     "flag": "NPR",
     "number": "524"
-  },
-  {
-    "code": "NZD",
-    "name": "New Zealand Dollar",
-    "symbol": "\$",
-    "flag": "NZD",
-    "number": "554"
   },
   {
     "code": "OMR",
@@ -483,25 +554,11 @@ List<Map<String, String>> currencies = [
     "number": "598"
   },
   {
-    "code": "PHP",
-    "name": "Philippines Peso",
-    "symbol": "₱",
-    "flag": "PHP",
-    "number": "608"
-  },
-  {
     "code": "PKR",
     "name": "Pakistan Rupee",
     "symbol": "₨",
     "flag": "PKR",
     "number": "586"
-  },
-  {
-    "code": "PLN",
-    "name": "Poland Zloty",
-    "symbol": "zł",
-    "flag": "PLN",
-    "number": "985"
   },
   {
     "code": "PYG",
@@ -518,46 +575,11 @@ List<Map<String, String>> currencies = [
     "number": "634"
   },
   {
-    "code": "RON",
-    "name": "Romania Leu",
-    "symbol": "lei",
-    "flag": "RON",
-    "number": "946"
-  },
-  {
     "code": "RSD",
     "name": "Serbia Dinar",
     "symbol": "Дин.",
     "flag": "RSD",
     "number": "941"
-  },
-  {
-    "code": "RUB",
-    "name": "Russia Ruble",
-    "symbol": "₽",
-    "flag": "RUB",
-    "number": "643"
-  },
-  {
-    "code": "SAR",
-    "name": "Saudi Arabia Riyal",
-    "symbol": "﷼",
-    "flag": "SAR",
-    "number": "682"
-  },
-  {
-    "code": "SEK",
-    "name": "Sweden Krona",
-    "symbol": "kr",
-    "flag": "SEK",
-    "number": "752"
-  },
-  {
-    "code": "SGD",
-    "name": "Singapore Dollar",
-    "symbol": "\$",
-    "flag": "SGD",
-    "number": "702"
   },
   {
     "code": "SOS",
@@ -574,25 +596,11 @@ List<Map<String, String>> currencies = [
     "number": "968"
   },
   {
-    "code": "THB",
-    "name": "Thailand Baht",
-    "symbol": "฿",
-    "flag": "THB",
-    "number": "764"
-  },
-  {
     "code": "TTD",
     "name": "Trinidad and Tobago Dollar",
     "symbol": "TT\$",
     "flag": "TTD",
     "number": "780"
-  },
-  {
-    "code": "TWD",
-    "name": "Taiwan New Dollar",
-    "symbol": "NT\$",
-    "flag": "TWD",
-    "number": "901"
   },
   {
     "code": "TZS",
@@ -642,12 +650,5 @@ List<Map<String, String>> currencies = [
     "symbol": "﷼",
     "flag": "YER",
     "number": "886"
-  },
-  {
-    "code": "ZAR",
-    "name": "South Africa Rand",
-    "symbol": "R",
-    "flag": "ZAR",
-    "number": "710"
   },
 ];
