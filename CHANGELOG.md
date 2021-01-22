@@ -1,3 +1,7 @@
+## [1.0.5] - 22 Jan 2021
+
+ * Sort currencies list according to [most traded currencies](https://en.wikipedia.org/wiki/Template:Most_traded_currencies)
+
 ## [1.0.4] - 22 Dec 2020
 
  * `searchHint`: Option to customize hint of the search TextField
