@@ -7,16 +7,17 @@ repository: https://github.com/Daniel-Ioannou/flutter_currency_picker
 version: 1.0.6
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.17.0 <2.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  collection: ^1.15.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lint: ^1.2.0
+  lint: ^1.5.2
 
 flutter:

@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Demo for currency picker')),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             showCurrencyPicker(
               context: context,
