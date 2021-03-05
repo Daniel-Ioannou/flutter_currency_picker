@@ -1,3 +1,7 @@
+## [2.0.0] - 05 Mar 2021
+
+ * Migrated to null safety
+ 
 ## [1.0.6] - 28 Jan 2021
 
  * Updating documentation
