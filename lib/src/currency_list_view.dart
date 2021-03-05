@@ -13,7 +13,7 @@ class CurrencyListView extends StatefulWidget {
   /// Can be used to uses filter the Currency list (optional).
   ///
   /// It takes a list of Currency code.
-  final List<String> currencyFilter;
+  final List<String>? currencyFilter;
 
   /// Shows flag for each currency (optional).
   ///
@@ -35,11 +35,11 @@ class CurrencyListView extends StatefulWidget {
   /// Hint of the search TextField (optional).
   ///
   /// Defaults Search.
-  final String searchHint;
+  final String? searchHint;
 
   const CurrencyListView({
-    Key key,
-    this.onSelect,
+    Key? key,
+    required this.onSelect,
     this.currencyFilter,
     this.searchHint,
     this.showCurrencyCode = true,
@@ -54,10 +54,10 @@ class CurrencyListView extends StatefulWidget {
 class _CurrencyListViewState extends State<CurrencyListView> {
   final CurrencyService _currencyService = CurrencyService();
 
-  List<Currency> _filteredList;
-  List<Currency> _currencyList;
+  late List<Currency> _filteredList;
+  late List<Currency> _currencyList;
 
-  TextEditingController _searchController;
+  TextEditingController? _searchController;
 
   @override
   void initState() {
@@ -69,7 +69,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
 
     if (widget.currencyFilter != null) {
       final List<String> currencyFilter =
-          widget.currencyFilter.map((code) => code.toUpperCase()).toList();
+          widget.currencyFilter!.map((code) => code.toUpperCase()).toList();
 
       _currencyList
           .removeWhere((element) => !currencyFilter.contains(element.code));
@@ -81,7 +81,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
 
   @override
   void dispose() {
-    _searchController.dispose();
+    _searchController?.dispose();
     super.dispose();
   }
 

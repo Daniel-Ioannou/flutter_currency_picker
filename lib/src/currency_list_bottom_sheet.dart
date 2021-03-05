@@ -4,16 +4,14 @@ import 'package:flutter/material.dart';
 import 'currency_list_view.dart';
 
 void showCurrencyListBottomSheet({
-  @required BuildContext context,
-  @required ValueChanged<Currency> onSelect,
-  List<String> currencyFilter,
-  String searchHint,
+  required BuildContext context,
+  required ValueChanged<Currency> onSelect,
+  List<String>? currencyFilter,
+  String? searchHint,
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
 }) {
-  assert(context != null);
-  assert(onSelect != null);
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
@@ -33,8 +31,8 @@ void showCurrencyListBottomSheet({
 Widget _builder(
   BuildContext context,
   ValueChanged<Currency> onSelect,
-  List<String> currencyFilter,
-  String searchHint,
+  List<String>? currencyFilter,
+  String? searchHint,
   bool showFlag,
   bool showCurrencyName,
   bool showCurrencyCode,
@@ -43,7 +41,7 @@ Widget _builder(
   final statusBarHeight = MediaQuery.of(context).padding.top;
   final height = device - (statusBarHeight + (kToolbarHeight / 1.5));
 
-  Color backgroundColor = Theme.of(context).bottomSheetTheme.backgroundColor;
+  Color? backgroundColor = Theme.of(context).bottomSheetTheme.backgroundColor;
   if (backgroundColor == null) {
     if (Theme.of(context).brightness == Brightness.light) {
       backgroundColor = Colors.white;

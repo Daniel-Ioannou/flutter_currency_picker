@@ -11,7 +11,7 @@ A flutter package to select a currency from a list of currencies.
  Add the package to your pubspec.yaml:
 
  ```yaml
- currency_picker: ^1.0.6
+ currency_picker: ^2.0.0
  ```
  
  In your dart file, import the library:

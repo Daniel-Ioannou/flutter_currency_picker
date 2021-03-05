@@ -16,9 +16,9 @@ class Currency {
   ///The currency number
   final String number;
 
-  Currency({this.code, this.name, this.symbol, this.flag, this.number});
+  Currency({required this.code, required this.name, required this.symbol, required this.flag, required this.number});
 
-  Currency.from({Map<String, dynamic> json})
+  Currency.from({required Map<String, dynamic> json})
       : code = json['code'],
         name = json['name'],
         symbol = json['symbol'],
