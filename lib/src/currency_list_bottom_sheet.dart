@@ -6,6 +6,7 @@ import 'currency_list_view.dart';
 void showCurrencyListBottomSheet({
   required BuildContext context,
   required ValueChanged<Currency> onSelect,
+  List<String>? favorite,
   List<String>? currencyFilter,
   String? searchHint,
   bool showFlag = true,
@@ -19,6 +20,7 @@ void showCurrencyListBottomSheet({
     builder: (_) => _builder(
       context,
       onSelect,
+      favorite,
       currencyFilter,
       searchHint,
       showFlag,
@@ -31,6 +33,7 @@ void showCurrencyListBottomSheet({
 Widget _builder(
   BuildContext context,
   ValueChanged<Currency> onSelect,
+  List<String>? favorite,
   List<String>? currencyFilter,
   String? searchHint,
   bool showFlag,
@@ -65,6 +68,7 @@ Widget _builder(
       showFlag: showFlag,
       showCurrencyName: showCurrencyName,
       showCurrencyCode: showCurrencyCode,
+      favorite: favorite,
       currencyFilter: currencyFilter,
     ),
   );

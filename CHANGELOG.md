@@ -1,3 +1,17 @@
+## [2.0.1] - 12 Mar 2021
+
+* Add `favorite` option.
+  - Can be used to to show the favorite currencies at the top of the list.
+  - It takes a list of currency code.
+    ```Dart
+    showCurrencyPicker(
+      context: context,
+      onSelect: (Currency currency) {
+        print('Select currency: ${currency.name}');
+      },
+      favorite: <String> ['EUR', 'GBP', 'USD'],
+    );
+    ```
 ## [2.0.0] - 05 Mar 2021
 
  * Migrated to null safety

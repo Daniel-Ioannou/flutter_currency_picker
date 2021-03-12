@@ -11,7 +11,7 @@ A flutter package to select a currency from a list of currencies.
  Add the package to your pubspec.yaml:
 
  ```yaml
- currency_picker: ^2.0.0
+ currency_picker: ^2.0.1
  ```
  
  In your dart file, import the library:
@@ -38,7 +38,7 @@ showCurrencyPicker(
 * `searchHint`: Option to customize hint of the search TextField (optional).
 * `showCurrencyName`: Option to show/hide the currency name, default value `true` (optional).
 * `showCurrencyCode`: Option to show/hide the currency code, default value `true` (optional).
-* `currencyFilter`: Can be used to uses filter the Currency list (optional).
+* `currencyFilter`: Can be used to filter the Currency list (optional).
   ```Dart
    showCurrencyPicker(
       context: context,
@@ -48,6 +48,7 @@ showCurrencyPicker(
       currencyFilter: <String>['EUR', 'GBP', 'USD', 'AUD', 'CAD', 'JPY', 'HKD', 'CHF', 'SEK', 'ILS'],
    );
   ``` 
+* `favorite`: Can be used to show the favorite currencies at the top of the list (optional).
 
 ## Contributions
 Contributions of any kind are more than welcome! Feel free to fork and improve currency_picker in any way you want, make a pull request, or open an issue.

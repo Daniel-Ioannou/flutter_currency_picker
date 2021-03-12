@@ -17,6 +17,7 @@ export 'package:currency_picker/src/currency_utils.dart';
 ///  `showCurrencyName`: Option to show/hide the currency name, default value true (optional).
 ///  `showCurrencyCode`: Option to show/hide the currency code, default value true (optional).
 ///  `currencyFilter`: Can be used to uses filter the Currency list (optional).
+///  `favorite`: The Currencies that will appear at the top of the list (optional).
 ///
 /// This example demonstrates how to use `showCurrencyPicker`
 /// ```dart
@@ -34,6 +35,7 @@ export 'package:currency_picker/src/currency_utils.dart';
 void showCurrencyPicker({
   required BuildContext context,
   required ValueChanged<Currency> onSelect,
+  List<String>? favorite,
   List<String>? currencyFilter,
   String? searchHint,
   bool showFlag = true,
@@ -49,6 +51,7 @@ void showCurrencyPicker({
     showFlag: showFlag,
     showCurrencyName: showCurrencyName,
     showCurrencyCode: showCurrencyCode,
+    favorite: favorite,
     currencyFilter: currencyFilter,
   );
 }

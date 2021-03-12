@@ -32,4 +32,18 @@ class CurrencyService {
     return _currencies
         .firstWhereOrNull((currency) => currency.number == number);
   }
+
+  ///Returns a list with all the currencies that mach the given codes list.
+  List<Currency> findCurrenciesByCode(List<String> codes) {
+    final List<String> _codes =
+        codes.map((code) => code.toUpperCase()).toList();
+    final List<Currency> currencies = [];
+    for (final code in _codes) {
+      final Currency? currency = findByCode(code);
+      if (currency != null) {
+        currencies.add(currency);
+      }
+    }
+    return currencies;
+  }
 }
