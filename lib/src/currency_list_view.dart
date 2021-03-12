@@ -10,6 +10,11 @@ class CurrencyListView extends StatefulWidget {
   /// The currency picker passes the new value to the callback.
   final ValueChanged<Currency> onSelect;
 
+  /// The Currencies that will appear at the top of the list (optional).
+  ///
+  /// It takes a list of Currency code.
+  final List<String>? favorite;
+
   /// Can be used to uses filter the Currency list (optional).
   ///
   /// It takes a list of Currency code.
@@ -40,6 +45,7 @@ class CurrencyListView extends StatefulWidget {
   const CurrencyListView({
     Key? key,
     required this.onSelect,
+    this.favorite,
     this.currencyFilter,
     this.searchHint,
     this.showCurrencyCode = true,
@@ -56,6 +62,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
 
   late List<Currency> _filteredList;
   late List<Currency> _currencyList;
+  List<Currency>? _favoriteList;
 
   TextEditingController? _searchController;
 
@@ -73,6 +80,10 @@ class _CurrencyListViewState extends State<CurrencyListView> {
 
       _currencyList
           .removeWhere((element) => !currencyFilter.contains(element.code));
+    }
+
+    if (widget.favorite != null) {
+      _favoriteList = _currencyService.findCurrenciesByCode(widget.favorite!);
     }
 
     _filteredList.addAll(_currencyList);
@@ -109,9 +120,20 @@ class _CurrencyListViewState extends State<CurrencyListView> {
         ),
         Expanded(
           child: ListView(
-            children: _filteredList
-                .map<Widget>((currency) => _listRow(currency))
-                .toList(),
+            children: [
+              if (_favoriteList != null) ...[
+                ..._favoriteList!
+                    .map<Widget>((currency) => _listRow(currency))
+                    .toList(),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Divider(thickness: 1),
+                ),
+              ],
+              ..._filteredList
+                  .map<Widget>((currency) => _listRow(currency))
+                  .toList()
+            ],
           ),
         ),
       ],
