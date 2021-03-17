@@ -37,7 +37,7 @@ List<Map<String, String>> currencies = [
   },
   {
     "code": "CAD",
-    "name": "Canada Dollar",
+    "name": "Canadian Dollar",
     "symbol": "\$",
     "flag": "CAD",
     "number": "124"
@@ -650,5 +650,47 @@ List<Map<String, String>> currencies = [
     "symbol": "﷼",
     "flag": "YER",
     "number": "886"
+  },
+  {
+    "code": "ALL",
+    "name": "Albanian Lek",
+    "symbol": "Lek",
+    "flag": "ALB",
+    "number": "008"
+  },
+  {
+    "code": "AMD",
+    "name": "Armenian Dram",
+    "symbol": "դր.",
+    "flag": "AM",
+    "number": "051"
+  },
+  {
+    "code": "AZN",
+    "name": "Azerbaijani Manat",
+    "symbol": "₼",
+    "flag": "AZE",
+    "number": "100"
+  },
+  {
+    "code": "BI",
+    "name": "Burundian Franc",
+    "symbol": "FBu",
+    "flag": "BI",
+    "number": "108"
+  },
+  {
+    "code": "BWP",
+    "name": "Botswanan Pula",
+    "symbol": "P",
+    "flag": "BW",
+    "number": "072"
+  },
+  {
+    "code": "BYN",
+    "name": "Belarussian Ruble",
+    "symbol": "руб.",
+    "flag": "BY",
+    "number": "933"
   },
 ];
