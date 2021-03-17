@@ -22,6 +22,18 @@ class Currency {
   ///The currency plural name in English
   final String namePlural;
 
+  ///The decimal separator
+  final String decimalSeparator;
+
+  ///The thousands separator
+  final String thousandsSeparator;
+
+  ///True if symbol is on the Left of the amount
+  final bool symbolOnLeft;
+
+  ///True if symbol has space with amount
+  final bool spaceBetweenAmountAndSymbol;
+
   Currency({
     required this.code,
     required this.name,
@@ -30,6 +42,10 @@ class Currency {
     required this.number,
     required this.decimalDigits,
     required this.namePlural,
+    required this.symbolOnLeft,
+    required this.decimalSeparator,
+    required this.thousandsSeparator,
+    required this.spaceBetweenAmountAndSymbol,
   });
 
   Currency.from({required Map<String, dynamic> json})
@@ -39,5 +55,9 @@ class Currency {
         number = json['number'],
         flag = json['flag'],
         decimalDigits = json['decimal_digits'],
-        namePlural = json['name_plural'];
+        namePlural = json['name_plural'],
+        symbolOnLeft = json['symbol_on_left'],
+        decimalSeparator = json['decimal_separator'],
+        thousandsSeparator = json['thousands_separator'],
+        spaceBetweenAmountAndSymbol = json['space_between_amount_and_symbol'];
 }
