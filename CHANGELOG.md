@@ -1,3 +1,20 @@
+## [2.0.2] - 18 Mar 2021
+
+* Add more currency info:
+  - Decimal digits 
+  - Plural name
+  - Symbol on left, 
+  - Decimal separator
+  - Thousands separator
+* Remove Lithuanian Litas currency (was replaced by the Euro).
+* Add more currencies:
+  - Albanian Lek
+  - Armenian Dram
+  - Azerbaijani Manat
+  - Burundian Franc
+  - Botswanan Pula
+  - Belarussian Ruble
+
 ## [2.0.1] - 12 Mar 2021
 
 * Add `favorite` option.
