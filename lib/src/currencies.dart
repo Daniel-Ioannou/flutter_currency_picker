@@ -445,7 +445,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "RON",
     "name": "Romania Leu",
-    "symbol": "lei",
+    "symbol": "L",
     "flag": "RON",
     "decimal_digits": 2,
     "number": 946,
@@ -666,7 +666,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "GHS",
     "name": "Ghana Cedi",
-    "symbol": "¢",
+    "symbol": "₵",
     "flag": "GHS",
     "decimal_digits": 2,
     "number": 936,
@@ -783,7 +783,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "KZT",
     "name": "Kazakhstan Tenge",
-    "symbol": "лв",
+    "symbol": "〒",
     "flag": "KZT",
     "decimal_digits": 2,
     "number": 398,
@@ -848,7 +848,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "MDL",
     "name": "Moldovan Leu",
-    "symbol": "MDL",
+    "symbol": "L",
     "flag": "MDL",
     "decimal_digits": 2,
     "number": 498,
@@ -1030,7 +1030,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "PYG",
     "name": "Paraguay Guarani",
-    "symbol": "Gs",
+    "symbol": "₲",
     "flag": "PYG",
     "decimal_digits": 0,
     "number": 600,
@@ -1212,7 +1212,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "AMD",
     "name": "Armenian Dram",
-    "symbol": "դր.",
+    "symbol": "֏",
     "flag": "AM",
     "decimal_digits": 0,
     "number": 51,
@@ -1264,7 +1264,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "BYN",
     "name": "Belarussian Ruble",
-    "symbol": "руб.",
+    "symbol": "Br",
     "flag": "BY",
     "decimal_digits": 2,
     "number": 933,
