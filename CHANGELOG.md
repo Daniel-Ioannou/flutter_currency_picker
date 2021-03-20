@@ -1,3 +1,7 @@
+## [2.0.3] - 20 Mar 2021
+* Add toJson in currency model
+* Fix incorrect currency symbols
+
 ## [2.0.2] - 18 Mar 2021
 
 * Add more currency info:

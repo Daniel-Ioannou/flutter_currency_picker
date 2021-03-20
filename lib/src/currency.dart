@@ -60,4 +60,18 @@ class Currency {
         decimalSeparator = json['decimal_separator'],
         thousandsSeparator = json['thousands_separator'],
         spaceBetweenAmountAndSymbol = json['space_between_amount_and_symbol'];
+
+  Map<String, dynamic> toJson() => {
+        'code': code,
+        'name': name,
+        'symbol': symbol,
+        'number': number,
+        'flag': flag,
+        'decimal_digits': decimalDigits,
+        'name_plural': namePlural,
+        'symbol_on_left': symbolOnLeft,
+        'decimal_separator': decimalSeparator,
+        'thousands_separator': thousandsSeparator,
+        'space_between_amount_and_symbol': spaceBetweenAmountAndSymbol,
+      };
 }
