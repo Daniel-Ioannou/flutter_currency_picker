@@ -44,6 +44,8 @@ class CurrencyListView extends StatefulWidget {
 
   final ScrollPhysics? physics;
 
+  final ScrollController? controller;
+
   const CurrencyListView({
     Key? key,
     required this.onSelect,
@@ -54,6 +56,7 @@ class CurrencyListView extends StatefulWidget {
     this.showCurrencyName = true,
     this.showFlag = true,
     this.physics,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -123,6 +126,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
         ),
         Expanded(
           child: ListView(
+            controller: widget.controller,
             physics: widget.physics,
             children: [
               if (_favoriteList != null) ...[
