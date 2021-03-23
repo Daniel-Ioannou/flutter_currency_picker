@@ -13,11 +13,13 @@ void showCurrencyListBottomSheet({
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
   ShapeBorder? shape,
+  Color? backgroundColor,
 }) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
     shape: shape,
+    backgroundColor: backgroundColor,
     builder: (_) => _builder(
       context,
       onSelect,
@@ -44,15 +46,6 @@ Widget _builder(
   final device = MediaQuery.of(context).size.height;
   final statusBarHeight = MediaQuery.of(context).padding.top;
   final height = device - (statusBarHeight + (kToolbarHeight / 1.5));
-
-  Color? backgroundColor = Theme.of(context).bottomSheetTheme.backgroundColor;
-  if (backgroundColor == null) {
-    if (Theme.of(context).brightness == Brightness.light) {
-      backgroundColor = Colors.white;
-    } else {
-      backgroundColor = Colors.black;
-    }
-  }
 
   return Container(
     height: height,
