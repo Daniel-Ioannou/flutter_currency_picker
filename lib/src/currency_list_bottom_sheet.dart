@@ -43,20 +43,20 @@ Widget _builder(
   bool showCurrencyName,
   bool showCurrencyCode,
 ) {
-  final device = MediaQuery.of(context).size.height;
-  final statusBarHeight = MediaQuery.of(context).padding.top;
-  final height = device - (statusBarHeight + (kToolbarHeight / 1.5));
 
-  return Container(
-    height: height,
-    child: CurrencyListView(
-      onSelect: onSelect,
-      searchHint: searchHint,
-      showFlag: showFlag,
-      showCurrencyName: showCurrencyName,
-      showCurrencyCode: showCurrencyCode,
-      favorite: favorite,
-      currencyFilter: currencyFilter,
-    ),
-  );
+  return DraggableScrollableSheet(
+      expand: false,
+      maxChildSize: 0.8,
+      builder: (BuildContext context, ScrollController controller) {
+        return CurrencyListView(
+          onSelect: onSelect,
+          searchHint: searchHint,
+          showFlag: showFlag,
+          showCurrencyName: showCurrencyName,
+          showCurrencyCode: showCurrencyCode,
+          favorite: favorite,
+          currencyFilter: currencyFilter,
+          controller: controller,
+        );
+      });
 }
