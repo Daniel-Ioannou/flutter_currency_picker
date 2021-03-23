@@ -36,6 +36,9 @@ class HomePage extends StatelessWidget {
                 print('Select currency: ${currency.name}');
               },
               favorite: ['SEK'],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+              ),
             );
           },
           child: const Text('Show currency picker'),

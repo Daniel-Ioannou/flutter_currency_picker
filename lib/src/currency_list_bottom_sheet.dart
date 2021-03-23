@@ -12,11 +12,12 @@ void showCurrencyListBottomSheet({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  ShapeBorder? shape,
 }) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    backgroundColor: Colors.transparent,
+    shape: shape,
     builder: (_) => _builder(
       context,
       onSelect,
@@ -55,13 +56,6 @@ Widget _builder(
 
   return Container(
     height: height,
-    decoration: BoxDecoration(
-      color: backgroundColor,
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(40.0),
-        topRight: Radius.circular(40.0),
-      ),
-    ),
     child: CurrencyListView(
       onSelect: onSelect,
       searchHint: searchHint,
