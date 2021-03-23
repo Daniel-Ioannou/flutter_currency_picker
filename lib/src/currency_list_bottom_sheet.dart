@@ -12,11 +12,14 @@ void showCurrencyListBottomSheet({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  ShapeBorder? shape,
+  Color? backgroundColor,
 }) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    backgroundColor: Colors.transparent,
+    shape: shape,
+    backgroundColor: backgroundColor,
     builder: (_) => _builder(
       context,
       onSelect,
@@ -44,24 +47,8 @@ Widget _builder(
   final statusBarHeight = MediaQuery.of(context).padding.top;
   final height = device - (statusBarHeight + (kToolbarHeight / 1.5));
 
-  Color? backgroundColor = Theme.of(context).bottomSheetTheme.backgroundColor;
-  if (backgroundColor == null) {
-    if (Theme.of(context).brightness == Brightness.light) {
-      backgroundColor = Colors.white;
-    } else {
-      backgroundColor = Colors.black;
-    }
-  }
-
   return Container(
     height: height,
-    decoration: BoxDecoration(
-      color: backgroundColor,
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(40.0),
-        topRight: Radius.circular(40.0),
-      ),
-    ),
     child: CurrencyListView(
       onSelect: onSelect,
       searchHint: searchHint,
