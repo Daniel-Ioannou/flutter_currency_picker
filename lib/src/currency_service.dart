@@ -16,19 +16,19 @@ class CurrencyService {
   }
 
   ///Returns the first currency that mach the given code.
-  Currency? findByCode(String code) {
-    final uppercaseCode = code.toUpperCase();
+  Currency? findByCode(String? code) {
+    final uppercaseCode = code?.toUpperCase(); 
     return _currencies
         .firstWhereOrNull((currency) => currency.code == uppercaseCode);
   }
 
   ///Returns the first currency that mach the given name.
-  Currency? findByName(String name) {
+  Currency? findByName(String? name) {
     return _currencies.firstWhereOrNull((currency) => currency.name == name);
   }
 
   ///Returns the first currency that mach the given number.
-  Currency? findByNumber(String number) {
+  Currency? findByNumber(String? number) {
     return _currencies
         .firstWhereOrNull((currency) => currency.number == number);
   }
