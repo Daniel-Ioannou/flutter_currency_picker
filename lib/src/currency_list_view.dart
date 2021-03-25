@@ -163,7 +163,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
       leading: widget.showFlag ? Center(
         widthFactor: 1,
         child: Text(
-          CurrencyUtils.countryCodeToEmoji(currency),
+          CurrencyUtils.currencyToEmoji(currency),
           style: const TextStyle(fontSize: 25),
         ),
       ) : const SizedBox(),
