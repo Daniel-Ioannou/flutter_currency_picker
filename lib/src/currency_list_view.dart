@@ -66,9 +66,9 @@ class CurrencyListView extends StatefulWidget {
 class _CurrencyListViewState extends State<CurrencyListView> {
   final CurrencyService _currencyService = CurrencyService();
 
-  late List<Currency> _filteredList;
-  late List<Currency> _currencyList;
-  List<Currency>? _favoriteList;
+  late List<Currency> _filteredList = [];
+  late List<Currency> _currencyList = [];
+  List<Currency>? _favoriteList = [];
 
   TextEditingController? _searchController;
 
@@ -130,7 +130,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
             controller: widget.controller,
             itemCount: _filteredList.length,
             itemBuilder: (BuildContext context, int index) {
-              if (_favoriteList != null && index == 0) {
+              if (_favoriteList!.isNotEmpty && index == 0) {
                 // list of favorite currencies
                 return Column(
                   children: [
@@ -143,8 +143,10 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                     ),
                   ],
                 );
+              } else if (_favoriteList!.isNotEmpty && index != 0) {
+                // list of currencies
+                return _listRow(_filteredList.elementAt(index - 1));
               }
-              // list of currencies
               return _listRow(_filteredList.elementAt(index));
             },
           ),
@@ -160,18 +162,24 @@ class _CurrencyListViewState extends State<CurrencyListView> {
         Navigator.pop(context);
       },
       minLeadingWidth: 0,
-      leading: widget.showFlag ? Center(
-        widthFactor: 1,
-        child: Text(
-          CurrencyUtils.currencyToEmoji(currency),
-          style: const TextStyle(fontSize: 25),
-        ),
-      ) : const SizedBox(),
+      leading: widget.showFlag
+          ? Center(
+              widthFactor: 1,
+              child: Text(
+                CurrencyUtils.currencyToEmoji(currency),
+                style: const TextStyle(fontSize: 25),
+              ),
+            )
+          : const SizedBox(),
       title: widget.showCurrencyCode ? Text(currency.code) : const SizedBox(),
-      subtitle: widget.showCurrencyName ? Text(currency.name) : const SizedBox(),
+      subtitle:
+          widget.showCurrencyName ? Text(currency.name) : const SizedBox(),
       trailing: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Text(currency.symbol, style: const TextStyle(fontSize: 18),),
+        child: Text(
+          currency.symbol,
+          style: const TextStyle(fontSize: 18),
+        ),
       ),
     );
   }
