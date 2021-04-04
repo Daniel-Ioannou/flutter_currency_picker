@@ -42,16 +42,22 @@ class CurrencyListView extends StatefulWidget {
   /// Defaults Search.
   final String? searchHint;
 
-  const CurrencyListView({
-    Key? key,
-    required this.onSelect,
-    this.favorite,
-    this.currencyFilter,
-    this.searchHint,
-    this.showCurrencyCode = true,
-    this.showCurrencyName = true,
-    this.showFlag = true,
-  }) : super(key: key);
+  final ScrollPhysics? physics;
+
+  final ScrollController? controller;
+
+  const CurrencyListView(
+      {Key? key,
+      required this.onSelect,
+      this.favorite,
+      this.currencyFilter,
+      this.searchHint,
+      this.showCurrencyCode = true,
+      this.showCurrencyName = true,
+      this.showFlag = true,
+      this.physics,
+      this.controller})
+      : super(key: key);
 
   @override
   _CurrencyListViewState createState() => _CurrencyListViewState();
@@ -60,9 +66,9 @@ class CurrencyListView extends StatefulWidget {
 class _CurrencyListViewState extends State<CurrencyListView> {
   final CurrencyService _currencyService = CurrencyService();
 
-  late List<Currency> _filteredList;
-  late List<Currency> _currencyList;
-  List<Currency>? _favoriteList;
+  late List<Currency> _filteredList = [];
+  late List<Currency> _currencyList = [];
+  List<Currency>? _favoriteList = [];
 
   TextEditingController? _searchController;
 
@@ -119,21 +125,30 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           ),
         ),
         Expanded(
-          child: ListView(
-            children: [
-              if (_favoriteList != null) ...[
-                ..._favoriteList!
-                    .map<Widget>((currency) => _listRow(currency))
-                    .toList(),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Divider(thickness: 1),
-                ),
-              ],
-              ..._filteredList
-                  .map<Widget>((currency) => _listRow(currency))
-                  .toList()
-            ],
+          child: ListView.builder(
+            physics: widget.physics,
+            controller: widget.controller,
+            itemCount: _filteredList.length,
+            itemBuilder: (BuildContext context, int index) {
+              if (_favoriteList!.isNotEmpty && index == 0) {
+                // list of favorite currencies
+                return Column(
+                  children: [
+                    ..._favoriteList!
+                        .map<Widget>((currency) => _listRow(currency))
+                        .toList(),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Divider(thickness: 1),
+                    ),
+                  ],
+                );
+              } else if (_favoriteList!.isNotEmpty && index != 0) {
+                // list of currencies
+                return _listRow(_filteredList.elementAt(index - 1));
+              }
+              return _listRow(_filteredList.elementAt(index));
+            },
           ),
         ),
       ],
@@ -141,67 +156,29 @@ class _CurrencyListViewState extends State<CurrencyListView> {
   }
 
   Widget _listRow(Currency currency) {
-    return Material(
-      // Add Material Widget with transparent color
-      // so the ripple effect of InkWell will show on tap
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () {
-          widget.onSelect(currency);
-          Navigator.pop(context);
-        },
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 9.0, horizontal: 8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Expanded(
-                child: Row(
-                  children: [
-                    const SizedBox(width: 15),
-                    if (widget.showFlag) ...[
-                      Text(
-                        CurrencyUtils.countryCodeToEmoji(currency),
-                        style: const TextStyle(fontSize: 25),
-                      ),
-                      const SizedBox(width: 15),
-                    ],
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          if (widget.showCurrencyCode) ...[
-                            Text(
-                              currency.code,
-                              style: const TextStyle(fontSize: 17),
-                            ),
-                          ],
-                          if (widget.showCurrencyName) ...[
-                            Text(
-                              currency.name,
-                              style: widget.showCurrencyCode
-                                  ? TextStyle(
-                                      fontSize: 15,
-                                      color: Theme.of(context).hintColor,
-                                    )
-                                  : const TextStyle(fontSize: 17),
-                            ),
-                          ]
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+    return ListTile(
+      onTap: () {
+        widget.onSelect(currency);
+        Navigator.pop(context);
+      },
+      minLeadingWidth: 0,
+      leading: widget.showFlag
+          ? Center(
+              widthFactor: 1,
+              child: Text(
+                CurrencyUtils.currencyToEmoji(currency),
+                style: const TextStyle(fontSize: 25),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  currency.symbol,
-                  style: const TextStyle(fontSize: 18),
-                ),
-              ),
-            ],
-          ),
+            )
+          : const SizedBox(),
+      title: widget.showCurrencyCode ? Text(currency.code) : const SizedBox(),
+      subtitle:
+          widget.showCurrencyName ? Text(currency.name) : const SizedBox(),
+      trailing: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Text(
+          currency.symbol,
+          style: const TextStyle(fontSize: 18),
         ),
       ),
     );

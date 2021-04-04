@@ -8,10 +8,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Demo for currency picker package',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       home: const HomePage(),
     );
   }
@@ -36,6 +34,9 @@ class HomePage extends StatelessWidget {
                 print('Select currency: ${currency.name}');
               },
               favorite: ['SEK'],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+              ),
             );
           },
           child: const Text('Show currency picker'),

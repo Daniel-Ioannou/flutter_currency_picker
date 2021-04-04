@@ -41,6 +41,8 @@ void showCurrencyPicker({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  ShapeBorder? shape,
+  Color? backgroundColor,
 }) {
   assert(showCurrencyName || showCurrencyCode,
       'showCurrencyName and showCurrencyCode cannot be both false');
@@ -53,6 +55,8 @@ void showCurrencyPicker({
     showCurrencyCode: showCurrencyCode,
     favorite: favorite,
     currencyFilter: currencyFilter,
+    shape: shape,
+    backgroundColor: backgroundColor,
   );
 }
 
