@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 import 'src/currency.dart';
 import 'src/currency_list_bottom_sheet.dart' as currency_list;
+import 'src/currency_picker_theme_data.dart';
 
 export 'package:currency_picker/src/currency.dart';
+export 'package:currency_picker/src/currency_picker_theme_data.dart';
 export 'package:currency_picker/src/currency_service.dart';
 export 'package:currency_picker/src/currency_utils.dart';
 
@@ -41,8 +43,7 @@ void showCurrencyPicker({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
-  ShapeBorder? shape,
-  Color? backgroundColor,
+  CurrencyPickerThemeData? theme,
 }) {
   assert(showCurrencyName || showCurrencyCode,
       'showCurrencyName and showCurrencyCode cannot be both false');
@@ -55,8 +56,7 @@ void showCurrencyPicker({
     showCurrencyCode: showCurrencyCode,
     favorite: favorite,
     currencyFilter: currencyFilter,
-    shape: shape,
-    backgroundColor: backgroundColor,
+    theme: theme,
   );
 }
 

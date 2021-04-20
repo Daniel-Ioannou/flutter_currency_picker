@@ -46,18 +46,18 @@ class CurrencyListView extends StatefulWidget {
 
   final ScrollController? controller;
 
-  const CurrencyListView(
-      {Key? key,
-      required this.onSelect,
-      this.favorite,
-      this.currencyFilter,
-      this.searchHint,
-      this.showCurrencyCode = true,
-      this.showCurrencyName = true,
-      this.showFlag = true,
-      this.physics,
-      this.controller})
-      : super(key: key);
+  const CurrencyListView({
+    Key? key,
+    required this.onSelect,
+    this.favorite,
+    this.currencyFilter,
+    this.searchHint,
+    this.showCurrencyCode = true,
+    this.showCurrencyName = true,
+    this.showFlag = true,
+    this.physics,
+    this.controller,
+  }) : super(key: key);
 
   @override
   _CurrencyListViewState createState() => _CurrencyListViewState();
@@ -66,9 +66,9 @@ class CurrencyListView extends StatefulWidget {
 class _CurrencyListViewState extends State<CurrencyListView> {
   final CurrencyService _currencyService = CurrencyService();
 
-  late List<Currency> _filteredList = [];
-  late List<Currency> _currencyList = [];
-  List<Currency>? _favoriteList = [];
+  late List<Currency> _filteredList;
+  late List<Currency> _currencyList;
+  List<Currency>? _favoriteList;
 
   TextEditingController? _searchController;
 
@@ -125,30 +125,21 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           ),
         ),
         Expanded(
-          child: ListView.builder(
-            physics: widget.physics,
-            controller: widget.controller,
-            itemCount: _filteredList.length,
-            itemBuilder: (BuildContext context, int index) {
-              if (_favoriteList!.isNotEmpty && index == 0) {
-                // list of favorite currencies
-                return Column(
-                  children: [
-                    ..._favoriteList!
-                        .map<Widget>((currency) => _listRow(currency))
-                        .toList(),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Divider(thickness: 1),
-                    ),
-                  ],
-                );
-              } else if (_favoriteList!.isNotEmpty && index != 0) {
-                // list of currencies
-                return _listRow(_filteredList.elementAt(index - 1));
-              }
-              return _listRow(_filteredList.elementAt(index));
-            },
+          child: ListView(
+            children: [
+              if (_favoriteList != null) ...[
+                ..._favoriteList!
+                    .map<Widget>((currency) => _listRow(currency))
+                    .toList(),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Divider(thickness: 1),
+                ),
+              ],
+              ..._filteredList
+                  .map<Widget>((currency) => _listRow(currency))
+                  .toList()
+            ],
           ),
         ),
       ],
