@@ -34,6 +34,7 @@ void showCurrencyListBottomSheet({
       showFlag,
       showCurrencyName,
       showCurrencyCode,
+      theme,
     ),
   );
 }
@@ -47,6 +48,7 @@ Widget _builder(
   bool showFlag,
   bool showCurrencyName,
   bool showCurrencyCode,
+  CurrencyPickerThemeData? theme,
 ) {
   return DraggableScrollableSheet(
     expand: false,
@@ -63,6 +65,7 @@ Widget _builder(
         favorite: favorite,
         currencyFilter: currencyFilter,
         controller: controller,
+        theme: theme,
       );
     },
   );

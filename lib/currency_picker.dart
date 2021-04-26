@@ -20,6 +20,7 @@ export 'package:currency_picker/src/currency_utils.dart';
 ///  `showCurrencyCode`: Option to show/hide the currency code, default value true (optional).
 ///  `currencyFilter`: Can be used to uses filter the Currency list (optional).
 ///  `favorite`: The Currencies that will appear at the top of the list (optional).
+///  `theme`: can be used to customizing the country list bottom sheet (optional).
 ///
 /// This example demonstrates how to use `showCurrencyPicker`
 /// ```dart
