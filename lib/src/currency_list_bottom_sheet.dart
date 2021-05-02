@@ -13,6 +13,7 @@ void showCurrencyListBottomSheet({
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
   ShapeBorder? shape,
+  ScrollPhysics? physics,
   Color? backgroundColor,
 }) {
   showModalBottomSheet(
@@ -26,6 +27,7 @@ void showCurrencyListBottomSheet({
       favorite,
       currencyFilter,
       searchHint,
+      physics,
       showFlag,
       showCurrencyName,
       showCurrencyCode,
@@ -39,6 +41,7 @@ Widget _builder(
   List<String>? favorite,
   List<String>? currencyFilter,
   String? searchHint,
+  ScrollPhysics? physics,
   bool showFlag,
   bool showCurrencyName,
   bool showCurrencyCode,
@@ -56,6 +59,7 @@ Widget _builder(
           showCurrencyCode: showCurrencyCode,
           favorite: favorite,
           currencyFilter: currencyFilter,
+          physics: physics,
           controller: controller,
         );
       });
