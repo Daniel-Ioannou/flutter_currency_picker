@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 import 'src/currency.dart';
 import 'src/currency_list_bottom_sheet.dart' as currency_list;
+import 'src/currency_picker_theme_data.dart';
 
 export 'package:currency_picker/src/currency.dart';
+export 'package:currency_picker/src/currency_picker_theme_data.dart';
 export 'package:currency_picker/src/currency_service.dart';
 export 'package:currency_picker/src/currency_utils.dart';
 
@@ -18,6 +20,7 @@ export 'package:currency_picker/src/currency_utils.dart';
 ///  `showCurrencyCode`: Option to show/hide the currency code, default value true (optional).
 ///  `currencyFilter`: Can be used to uses filter the Currency list (optional).
 ///  `favorite`: The Currencies that will appear at the top of the list (optional).
+///  `theme`: can be used to customizing the country list bottom sheet (optional).
 ///
 /// This example demonstrates how to use `showCurrencyPicker`
 /// ```dart
@@ -41,9 +44,8 @@ void showCurrencyPicker({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
-  ShapeBorder? shape,
   ScrollPhysics? physics,
-  Color? backgroundColor,
+  CurrencyPickerThemeData? theme,
 }) {
   assert(showCurrencyName || showCurrencyCode,
       'showCurrencyName and showCurrencyCode cannot be both false');
@@ -56,9 +58,8 @@ void showCurrencyPicker({
     showCurrencyCode: showCurrencyCode,
     favorite: favorite,
     currencyFilter: currencyFilter,
-    shape: shape,
+    theme: theme,
     physics: physics,
-    backgroundColor: backgroundColor,
   );
 }
 

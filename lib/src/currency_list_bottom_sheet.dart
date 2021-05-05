@@ -2,6 +2,7 @@ import 'package:currency_picker/src/currency.dart';
 import 'package:flutter/material.dart';
 
 import 'currency_list_view.dart';
+import 'currency_picker_theme_data.dart';
 
 void showCurrencyListBottomSheet({
   required BuildContext context,
@@ -12,15 +13,19 @@ void showCurrencyListBottomSheet({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
-  ShapeBorder? shape,
   ScrollPhysics? physics,
-  Color? backgroundColor,
+  CurrencyPickerThemeData? theme,
 }) {
+  final ShapeBorder shape = theme?.shape ??
+      const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      );
+
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
     shape: shape,
-    backgroundColor: backgroundColor,
+    backgroundColor: theme?.backgroundColor,
     builder: (_) => _builder(
       context,
       onSelect,
@@ -31,6 +36,7 @@ void showCurrencyListBottomSheet({
       showFlag,
       showCurrencyName,
       showCurrencyCode,
+      theme,
     ),
   );
 }
@@ -45,22 +51,26 @@ Widget _builder(
   bool showFlag,
   bool showCurrencyName,
   bool showCurrencyCode,
+  CurrencyPickerThemeData? theme,
 ) {
-
   return DraggableScrollableSheet(
-      expand: false,
-      maxChildSize: 0.8,
-      builder: (BuildContext context, ScrollController controller) {
-        return CurrencyListView(
-          onSelect: onSelect,
-          searchHint: searchHint,
-          showFlag: showFlag,
-          showCurrencyName: showCurrencyName,
-          showCurrencyCode: showCurrencyCode,
-          favorite: favorite,
-          currencyFilter: currencyFilter,
-          physics: physics,
-          controller: controller,
-        );
-      });
+    expand: false,
+    maxChildSize: 0.9,
+    initialChildSize: 0.9,
+    minChildSize: 0.8,
+    builder: (BuildContext context, ScrollController controller) {
+      return CurrencyListView(
+        onSelect: onSelect,
+        searchHint: searchHint,
+        showFlag: showFlag,
+        showCurrencyName: showCurrencyName,
+        showCurrencyCode: showCurrencyCode,
+        favorite: favorite,
+        currencyFilter: currencyFilter,
+        controller: controller,
+        physics: physics,
+        theme: theme,
+      );
+    },
+  );
 }
