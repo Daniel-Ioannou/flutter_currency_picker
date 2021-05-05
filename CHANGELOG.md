@@ -1,3 +1,20 @@
+## [2.0.4] - 05 May 2021
+* Implemented currency picker theme 
+  ```Dart
+   showCurrencyPicker(
+      context: context,
+      theme: CurrencyPickerThemeData(
+         flagSize: 25,
+         titleTextStyle: TextStyle(fontSize: 17),
+         subtitleTextStyle: TextStyle(fontSize: 15, color: Theme.of(context).hintColor),
+      ),
+      onSelect: (Currency currency) {
+         print('Select currency: ${currency.name}');
+      },
+   );
+  ``` 
+* Add `ScrollPhysics` parameter
+
 ## [2.0.3] - 20 Mar 2021
 * Add toJson in currency model
 * Fix incorrect currency symbols
