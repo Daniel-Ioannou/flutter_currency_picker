@@ -150,7 +150,11 @@ class _CurrencyListViewState extends State<CurrencyListView> {
   }
 
   Widget _listRow(Currency currency) {
-    final TextStyle _textStyle = widget.theme?.textStyle ?? _defaultTextStyle;
+    final TextStyle _titleTextStyle =
+        widget.theme?.titleTextStyle ?? _defaultTitleTextStyle;
+    final TextStyle _subtitleTextStyle =
+        widget.theme?.subtitleTextStyle ?? _defaultSubtitleTextStyle;
+
     return Material(
       // Add Material Widget with transparent color
       // so the ripple effect of InkWell will show on tap
@@ -172,7 +176,9 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                     if (widget.showFlag) ...[
                       Text(
                         CurrencyUtils.currencyToEmoji(currency),
-                        style: const TextStyle(fontSize: 25),
+                        style: TextStyle(
+                          fontSize: widget.theme?.flagSize ?? 25,
+                        ),
                       ),
                       const SizedBox(width: 15),
                     ],
@@ -183,18 +189,15 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                           if (widget.showCurrencyCode) ...[
                             Text(
                               currency.code,
-                              style: _textStyle,
+                              style: _titleTextStyle,
                             ),
                           ],
                           if (widget.showCurrencyName) ...[
                             Text(
                               currency.name,
                               style: widget.showCurrencyCode
-                                  ? TextStyle(
-                                      fontSize: 15,
-                                      color: Theme.of(context).hintColor,
-                                    )
-                                  : _textStyle,
+                                  ? _subtitleTextStyle
+                                  : _titleTextStyle,
                             ),
                           ]
                         ],
@@ -233,5 +236,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
     setState(() => _filteredList = _searchResult);
   }
 
-  TextStyle get _defaultTextStyle => const TextStyle(fontSize: 17);
+  TextStyle get _defaultTitleTextStyle => const TextStyle(fontSize: 17);
+  TextStyle get _defaultSubtitleTextStyle =>
+      TextStyle(fontSize: 15, color: Theme.of(context).hintColor);
 }
