@@ -13,6 +13,7 @@ void showCurrencyListBottomSheet({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
 }) {
   final ShapeBorder shape = theme?.shape ??
@@ -31,6 +32,7 @@ void showCurrencyListBottomSheet({
       favorite,
       currencyFilter,
       searchHint,
+      physics,
       showFlag,
       showCurrencyName,
       showCurrencyCode,
@@ -45,6 +47,7 @@ Widget _builder(
   List<String>? favorite,
   List<String>? currencyFilter,
   String? searchHint,
+  ScrollPhysics? physics,
   bool showFlag,
   bool showCurrencyName,
   bool showCurrencyCode,
@@ -65,6 +68,7 @@ Widget _builder(
         favorite: favorite,
         currencyFilter: currencyFilter,
         controller: controller,
+        physics: physics,
         theme: theme,
       );
     },

@@ -45,6 +45,8 @@ class CurrencyListView extends StatefulWidget {
 
   final ScrollController? controller;
 
+  final ScrollPhysics? physics;
+
   /// An optional argument for for customizing the
   /// currency list bottom sheet.
   final CurrencyPickerThemeData? theme;
@@ -58,6 +60,7 @@ class CurrencyListView extends StatefulWidget {
     this.showCurrencyCode = true,
     this.showCurrencyName = true,
     this.showFlag = true,
+    this.physics,
     this.controller,
     this.theme,
   }) : super(key: key);
@@ -129,6 +132,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
         ),
         Expanded(
           child: ListView(
+            physics: widget.physics,
             children: [
               if (_favoriteList != null) ...[
                 ..._favoriteList!

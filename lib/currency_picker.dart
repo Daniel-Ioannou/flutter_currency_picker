@@ -44,6 +44,7 @@ void showCurrencyPicker({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
 }) {
   assert(showCurrencyName || showCurrencyCode,
@@ -58,6 +59,7 @@ void showCurrencyPicker({
     favorite: favorite,
     currencyFilter: currencyFilter,
     theme: theme,
+    physics: physics,
   );
 }
 
