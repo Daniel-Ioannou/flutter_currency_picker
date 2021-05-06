@@ -121,11 +121,13 @@ class _CurrencyListViewState extends State<CurrencyListView> {
               labelText: widget.searchHint ?? "Search",
               hintText: widget.searchHint ?? "Search",
               prefixIcon: const Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: const Color(0xFF8C98A8).withOpacity(0.2),
-                ),
-              ),
+              border: Theme.of(context).inputDecorationTheme.border == null
+                  ? OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: const Color(0xFF8C98A8).withOpacity(0.2),
+                      ),
+                    )
+                  : null,
             ),
             onChanged: _filterSearchResults,
           ),
