@@ -20,7 +20,7 @@ List<Map<String, dynamic>> currencies = [
     "flag": "EUR",
     "decimal_digits": 2,
     "number": 978,
-    "name_plural": "euros",
+    "name_plural": "Euros",
     "thousands_separator": " ",
     "decimal_separator": ",",
     "space_between_amount_and_symbol": true,
