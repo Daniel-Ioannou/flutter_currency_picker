@@ -1,3 +1,6 @@
+## [2.0.5] - 23 Aug 2021
+* Fix `name_plural` of the Euros
+
 ## [2.0.4] - 05 May 2021
 * Implemented currency picker theme 
   ```Dart
