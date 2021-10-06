@@ -1095,7 +1095,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "TTD",
     "name": "Trinidad and Tobago Dollar",
-    "symbol": "TT$\$",
+    "symbol": "TT\$",
     "flag": "TTD",
     "decimal_digits": 2,
     "number": 780,
