@@ -1086,7 +1086,7 @@ List<Map<String, dynamic>> currencies = [
     "flag": "SRD",
     "decimal_digits": 2,
     "number": 968,
-    "name_plural": "Suriname Dollar",
+    "name_plural": "Suriname Dollars",
     "thousands_separator": ",",
     "decimal_separator": ".",
     "space_between_amount_and_symbol": false,
