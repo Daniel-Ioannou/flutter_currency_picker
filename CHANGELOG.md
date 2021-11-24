@@ -1,5 +1,8 @@
+## [2.0.6] - 24 Nov 2021
+* Fix `name_plural` for Suriname Dollar
+* 
 ## [2.0.5] - 23 Aug 2021
-* Fix `name_plural` of the Euros
+* Fix `name_plural` for Euros
 
 ## [2.0.4] - 05 May 2021
 * Implemented currency picker theme 
