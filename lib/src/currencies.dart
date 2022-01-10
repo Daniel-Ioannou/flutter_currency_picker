@@ -1236,7 +1236,7 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": false,
   },
   {
-    "code": "BI",
+    "code": "BIF",
     "name": "Burundian Franc",
     "symbol": "FBu",
     "flag": "BI",
