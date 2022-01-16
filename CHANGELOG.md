@@ -1,6 +1,10 @@
+## [2.0.7] - 16 Jan 2022
+* Fix `code` for Burundian Franc
+* Fix `name` and  `name_plural`for Brazilian Real
+
 ## [2.0.6] - 24 Nov 2021
 * Fix `name_plural` for Suriname Dollar
-* 
+
 ## [2.0.5] - 23 Aug 2021
 * Fix `name_plural` for Euros
 
