@@ -1,4 +1,4 @@
-import 'package:collection/collection.dart' show IterableExtension;
+import 'package:collection/collection.dart';
 import 'package:currency_picker/src/currencies.dart';
 import 'package:currency_picker/src/currency.dart';
 
