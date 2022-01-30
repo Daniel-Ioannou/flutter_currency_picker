@@ -145,7 +145,7 @@ List<Map<String, dynamic>> currencies = [
   },
   {
     "code": "KRW",
-    "name": "Korea (South) Won",
+    "name": "South Korea Won",
     "symbol": "₩",
     "flag": "KRW",
     "decimal_digits": 0,
