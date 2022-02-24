@@ -1,3 +1,7 @@
+## [2.0.8] - 24 Feb 2022
+* Add the Syrian Pound 
+* Fix `name` for South Korea
+
 ## [2.0.7] - 16 Jan 2022
 * Fix `code` for Burundian Franc
 * Fix `name` and  `name_plural`for Brazilian Real
