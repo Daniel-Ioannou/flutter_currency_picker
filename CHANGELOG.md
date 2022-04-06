@@ -1,3 +1,8 @@
+## [2.0.9] - 06 Apr 2022
+* Add more currencies:
+  - Seychellois rupee
+  - Bosnia and Herzegovina convertible mark
+
 ## [2.0.8] - 24 Feb 2022
 * Add the Syrian Pound 
 * Fix `name` for South Korea
