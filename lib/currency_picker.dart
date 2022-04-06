@@ -47,8 +47,10 @@ void showCurrencyPicker({
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
 }) {
-  assert(showCurrencyName || showCurrencyCode,
-      'showCurrencyName and showCurrencyCode cannot be both false');
+  assert(
+    showCurrencyName || showCurrencyCode,
+    'showCurrencyName and showCurrencyCode cannot be both false',
+  );
   currency_list.showCurrencyListBottomSheet(
     context: context,
     onSelect: onSelect,
@@ -63,8 +65,10 @@ void showCurrencyPicker({
   );
 }
 
-@Deprecated('Use showCurrencyPicker instead. '
-    'This feature was deprecated after v1.0.2.')
+@Deprecated(
+  'Use showCurrencyPicker instead. '
+  'This feature was deprecated after v1.0.2.',
+)
 void showCurrencyListBottomSheet({
   required BuildContext context,
   required ValueChanged<Currency> onSelect,

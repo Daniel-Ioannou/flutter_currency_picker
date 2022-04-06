@@ -1,6 +1,6 @@
-import 'package:currency_picker/src/currency.dart';
 import 'package:flutter/material.dart';
 
+import 'currency.dart';
 import 'currency_list_view.dart';
 import 'currency_picker_theme_data.dart';
 

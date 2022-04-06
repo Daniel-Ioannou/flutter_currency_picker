@@ -4,8 +4,11 @@ linter:
   rules:
     avoid_print: false
     overridden_fields: false
+    prefer_single_quotes: false
     prefer_initializing_formals: false
     avoid_escaping_inner_quotes: false
+    always_use_package_imports: false
+    library_private_types_in_public_api: false
     avoid_classes_with_only_static_members: false
 
 
