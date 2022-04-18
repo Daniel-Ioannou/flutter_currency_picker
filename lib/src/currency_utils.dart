@@ -2,8 +2,8 @@ import 'currency.dart';
 
 class CurrencyUtils {
   /// Return Flag (Emoji Unicode) of a given currency
-  static String currencyToEmoji(Currency? currency) {
-    final String currencyFlag = currency!.flag;
+  static String currencyToEmoji(Currency currency) {
+    final String currencyFlag = currency.flag!;
     // 0x41 is Letter A
     // 0x1F1E6 is Regional Indicator Symbol Letter A
     // Example :

@@ -11,7 +11,7 @@ class Currency {
   ///The currency flag code
   ///
   /// To get flag unicode(Emoji) use [CurrencyUtils.currencyToEmoji]
-  final String flag;
+  final String? flag;
 
   ///The currency number
   final int number;

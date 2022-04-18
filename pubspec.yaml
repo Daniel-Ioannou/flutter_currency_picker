@@ -15,9 +15,13 @@ dependencies:
     sdk: flutter
   collection: ^1.15.0
 
+flutter:
+  assets:
+    - lib/src/res/
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   lint: ^1.8.2
 
-flutter:
+
