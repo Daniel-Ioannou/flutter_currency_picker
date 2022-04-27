@@ -22,11 +22,16 @@ class CurrencyPickerThemeData {
   /// If null, set to 25
   final double? flagSize;
 
-  CurrencyPickerThemeData({
-    this.shape,
-    this.flagSize,
-    this.titleTextStyle,
-    this.subtitleTextStyle,
-    this.backgroundColor,
-  });
+  ///Country list modal height
+  ///
+  /// By default it's fullscreen
+  final double? bottomSheetHeight;
+
+  CurrencyPickerThemeData(
+      {this.shape,
+      this.flagSize,
+      this.titleTextStyle,
+      this.subtitleTextStyle,
+      this.backgroundColor,
+      this.bottomSheetHeight});
 }

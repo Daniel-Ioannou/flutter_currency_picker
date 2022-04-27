@@ -38,6 +38,9 @@ class CurrencyListView extends StatefulWidget {
   /// Defaults true.
   final bool showCurrencyCode;
 
+  /// To disable the search TextField (optional).
+  final bool showSearchField;
+
   /// Hint of the search TextField (optional).
   ///
   /// Defaults Search.
@@ -56,6 +59,7 @@ class CurrencyListView extends StatefulWidget {
     required this.onSelect,
     this.favorite,
     this.currencyFilter,
+    this.showSearchField = true,
     this.searchHint,
     this.showCurrencyCode = true,
     this.showCurrencyName = true,
@@ -115,20 +119,22 @@ class _CurrencyListViewState extends State<CurrencyListView> {
         const SizedBox(height: 12),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-          child: TextField(
-            controller: _searchController,
-            decoration: InputDecoration(
-              labelText: widget.searchHint ?? "Search",
-              hintText: widget.searchHint ?? "Search",
-              prefixIcon: const Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: const Color(0xFF8C98A8).withOpacity(0.2),
-                ),
-              ),
-            ),
-            onChanged: _filterSearchResults,
-          ),
+          child: widget.showSearchField
+              ? TextField(
+                  controller: _searchController,
+                  decoration: InputDecoration(
+                    labelText: widget.searchHint ?? "Search",
+                    hintText: widget.searchHint ?? "Search",
+                    prefixIcon: const Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: const Color(0xFF8C98A8).withOpacity(0.2),
+                      ),
+                    ),
+                  ),
+                  onChanged: _filterSearchResults,
+                )
+              : Container(),
         ),
         Expanded(
           child: ListView(

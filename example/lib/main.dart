@@ -28,12 +28,15 @@ class HomePage extends StatelessWidget {
             showCurrencyPicker(
               context: context,
               showFlag: true,
+              showSearchField: true,
               showCurrencyName: true,
               showCurrencyCode: true,
               onSelect: (Currency currency) {
                 print('Select currency: ${currency.name}');
               },
               favorite: ['SEK'],
+              theme: CurrencyPickerThemeData(
+                  bottomSheetHeight: MediaQuery.of(context).size.height / 2),
             );
           },
           child: const Text('Show currency picker'),
