@@ -1,3 +1,9 @@
+## [2.0.10] - 30 Apr 2022
+* Add more currencies:
+  - Cambodian riel
+  - Central African CFA franc
+* Remove duplicated currency BYN
+
 ## [2.0.9] - 06 Apr 2022
 * Add more currencies:
   - Seychellois rupee
