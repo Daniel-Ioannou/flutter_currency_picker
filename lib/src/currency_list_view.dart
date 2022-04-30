@@ -1,3 +1,4 @@
+import 'package:currency_picker/src/extensions.dart';
 import 'package:flutter/material.dart';
 
 import 'currency.dart';
@@ -178,12 +179,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                   children: [
                     const SizedBox(width: 15),
                     if (widget.showFlag) ...[
-                      Text(
-                        CurrencyUtils.currencyToEmoji(currency),
-                        style: TextStyle(
-                          fontSize: widget.theme?.flagSize ?? 25,
-                        ),
-                      ),
+                      _flagWidget(currency),
                       const SizedBox(width: 15),
                     ],
                     Expanded(
@@ -220,6 +216,23 @@ class _CurrencyListViewState extends State<CurrencyListView> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _flagWidget(Currency currency) {
+    if (currency.flag == null) {
+      return Image.asset(
+        'no_flag.png'.imagePath,
+        package: 'currency_picker',
+        width: 27,
+      );
+    }
+
+    return Text(
+      CurrencyUtils.currencyToEmoji(currency),
+      style: TextStyle(
+        fontSize: widget.theme?.flagSize ?? 25,
       ),
     );
   }
