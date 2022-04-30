@@ -2,6 +2,7 @@
 * Add more currencies:
   - Seychellois rupee
   - Bosnia and Herzegovina convertible mark
+* Remove duplicated currency BYN
 
 ## [2.0.8] - 24 Feb 2022
 * Add the Syrian Pound 
