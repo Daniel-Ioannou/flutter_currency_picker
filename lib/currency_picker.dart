@@ -41,6 +41,7 @@ void showCurrencyPicker({
   List<String>? favorite,
   List<String>? currencyFilter,
   String? searchHint,
+  bool showSearchField = true,
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
@@ -54,6 +55,7 @@ void showCurrencyPicker({
   currency_list.showCurrencyListBottomSheet(
     context: context,
     onSelect: onSelect,
+    showSearchField:showSearchField,
     searchHint: searchHint,
     showFlag: showFlag,
     showCurrencyName: showCurrencyName,

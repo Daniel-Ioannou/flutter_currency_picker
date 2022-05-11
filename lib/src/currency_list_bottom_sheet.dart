@@ -10,6 +10,7 @@ void showCurrencyListBottomSheet({
   List<String>? favorite,
   List<String>? currencyFilter,
   String? searchHint,
+  bool showSearchField = true,
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
@@ -21,7 +22,7 @@ void showCurrencyListBottomSheet({
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       );
 
-  showModalBottomSheet(
+  showModalBottomSheet<dynamic>(
     context: context,
     isScrollControlled: true,
     shape: shape,
@@ -33,6 +34,7 @@ void showCurrencyListBottomSheet({
       currencyFilter,
       searchHint,
       physics,
+      showSearchField,
       showFlag,
       showCurrencyName,
       showCurrencyCode,
@@ -48,29 +50,29 @@ Widget _builder(
   List<String>? currencyFilter,
   String? searchHint,
   ScrollPhysics? physics,
+  bool showSearchField,
   bool showFlag,
   bool showCurrencyName,
   bool showCurrencyCode,
   CurrencyPickerThemeData? theme,
 ) {
-  return DraggableScrollableSheet(
-    expand: false,
-    maxChildSize: 0.9,
-    initialChildSize: 0.9,
-    minChildSize: 0.8,
-    builder: (BuildContext context, ScrollController controller) {
-      return CurrencyListView(
-        onSelect: onSelect,
-        searchHint: searchHint,
-        showFlag: showFlag,
-        showCurrencyName: showCurrencyName,
-        showCurrencyCode: showCurrencyCode,
-        favorite: favorite,
-        currencyFilter: currencyFilter,
-        controller: controller,
-        physics: physics,
-        theme: theme,
-      );
-    },
+  final device = MediaQuery.of(context).size.height;
+  final statusBarHeight = MediaQuery.of(context).padding.top;
+  final height = theme?.bottomSheetHeight ??
+      device - (statusBarHeight + (kToolbarHeight / 1.5));
+  return SizedBox(
+    height: height,
+    child: CurrencyListView(
+      onSelect: onSelect,
+      searchHint: searchHint,
+      showSearchField: showSearchField,
+      showFlag: showFlag,
+      showCurrencyName: showCurrencyName,
+      showCurrencyCode: showCurrencyCode,
+      favorite: favorite,
+      currencyFilter: currencyFilter,
+      physics: physics,
+      theme: theme,
+    ),
   );
 }
