@@ -35,8 +35,6 @@ class HomePage extends StatelessWidget {
                 print('Select currency: ${currency.name}');
               },
               favorite: ['SEK'],
-              theme: CurrencyPickerThemeData(
-                  bottomSheetHeight: MediaQuery.of(context).size.height / 2),
             );
           },
           child: const Text('Show currency picker'),
