@@ -1,3 +1,19 @@
+## [2.0.11] - 12 May 2022
+* Add more currencies:
+  - Rwandan franc
+  - Haitian gourde
+* Add `showSearchField`: Option to show/hide the search TextField.
+* Add option for bottom sheet height.
+    ```Dart
+       showCurrencyPicker(
+         context: context,
+         theme: CurrencyPickerThemeData(
+           bottomSheetHeight: MediaQuery.of(context).size.height / 2,
+         ),
+         onSelect: (Currency currency) => print('Select currency: ${currency.name}'),
+       );
+    ```
+
 ## [2.0.10] - 30 Apr 2022
 * Add more currencies:
   - Cambodian riel
