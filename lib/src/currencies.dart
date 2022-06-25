@@ -1365,4 +1365,17 @@ List<Map<String, dynamic>> currencies = [
     "space_between_amount_and_symbol": true,
     "symbol_on_left": true,
   },
+  {
+    "code": "MMK",
+    "name": "Myanmar Kyat",
+    "symbol": "Ks",
+    "flag": "MM",
+    "decimal_digits": 2,
+    "number": 104,
+    "name_plural": "Myanmar Kyats",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": true,
+  },
 ];
