@@ -55,7 +55,7 @@ void showCurrencyPicker({
   currency_list.showCurrencyListBottomSheet(
     context: context,
     onSelect: onSelect,
-    showSearchField:showSearchField,
+    showSearchField: showSearchField,
     searchHint: searchHint,
     showFlag: showFlag,
     showCurrencyName: showCurrencyName,
