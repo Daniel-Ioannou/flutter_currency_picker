@@ -1,3 +1,9 @@
+## 2.0.12
+* Add more currencies:
+  - Congolese franc
+  - Guatemalan quetzal
+  - Myanmar Kyat
+
 ## 2.0.11
 * Add more currencies:
   - Rwandan franc
