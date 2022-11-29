@@ -1,3 +1,16 @@
+## 2.0.13
+* Add more currencies:
+  - Algerian dinar
+* Add `currencySignTextStyle`:
+    ```Dart
+       showCurrencyPicker(
+         context: context,
+         theme: CurrencyPickerThemeData(
+           currencySignTextStyle: TextStyle(color: Colors.red, fontSize: 25),
+         ),
+         onSelect: (Currency currency) => print('Select currency: ${currency.name}'),
+       );
+    ```
 ## 2.0.12
 * Add more currencies:
   - Congolese franc
