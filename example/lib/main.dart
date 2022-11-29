@@ -31,9 +31,6 @@ class HomePage extends StatelessWidget {
               showSearchField: true,
               showCurrencyName: true,
               showCurrencyCode: true,
-              theme: CurrencyPickerThemeData(
-                  currencySignTextStyle:
-                      TextStyle(color: Colors.red, fontSize: 25)),
               onSelect: (Currency currency) {
                 print('Select currency: ${currency.name}');
               },

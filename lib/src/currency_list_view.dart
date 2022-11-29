@@ -264,9 +264,5 @@ class _CurrencyListViewState extends State<CurrencyListView> {
   TextStyle get _defaultTitleTextStyle => const TextStyle(fontSize: 17);
   TextStyle get _defaultSubtitleTextStyle =>
       TextStyle(fontSize: 15, color: Theme.of(context).hintColor);
-  TextStyle get _defaultCurrencySignTextStyle => const TextStyle(
-        fontSize: 18,
-        color: Colors.black,
-        fontWeight: FontWeight.bold,
-      );
+  TextStyle get _defaultCurrencySignTextStyle => const TextStyle(fontSize: 18);
 }
