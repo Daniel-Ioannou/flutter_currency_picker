@@ -165,6 +165,8 @@ class _CurrencyListViewState extends State<CurrencyListView> {
         widget.theme?.titleTextStyle ?? _defaultTitleTextStyle;
     final TextStyle _subtitleTextStyle =
         widget.theme?.subtitleTextStyle ?? _defaultSubtitleTextStyle;
+    final _currencySignTextStyle =
+        widget.theme?.currencySignTextStyle ?? _defaultCurrencySignTextStyle;
 
     return Material(
       // Add Material Widget with transparent color
@@ -216,7 +218,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   currency.symbol,
-                  style: const TextStyle(fontSize: 18),
+                  style: _currencySignTextStyle,
                 ),
               ),
             ],
@@ -262,4 +264,9 @@ class _CurrencyListViewState extends State<CurrencyListView> {
   TextStyle get _defaultTitleTextStyle => const TextStyle(fontSize: 17);
   TextStyle get _defaultSubtitleTextStyle =>
       TextStyle(fontSize: 15, color: Theme.of(context).hintColor);
+  TextStyle get _defaultCurrencySignTextStyle => const TextStyle(
+        fontSize: 18,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      );
 }
