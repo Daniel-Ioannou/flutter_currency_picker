@@ -1,3 +1,10 @@
+## 2.0.14
+* Add more currencies:
+  - Zambian Kwacha
+  - Jordanian Dinar
+  - Kyrgystani Som
+* Remove currencies:
+  - Croatia Kuna
 ## 2.0.13
 * Add more currencies:
   - Algerian dinar
