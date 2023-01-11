@@ -142,17 +142,13 @@ class _CurrencyListViewState extends State<CurrencyListView> {
             physics: widget.physics,
             children: [
               if (_favoriteList != null) ...[
-                ..._favoriteList!
-                    .map<Widget>((currency) => _listRow(currency))
-                    .toList(),
+                ..._favoriteList!.map<Widget>((currency) => _listRow(currency)),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.0),
                   child: Divider(thickness: 1),
                 ),
               ],
-              ..._filteredList
-                  .map<Widget>((currency) => _listRow(currency))
-                  .toList()
+              ..._filteredList.map<Widget>((currency) => _listRow(currency))
             ],
           ),
         ),
@@ -161,11 +157,11 @@ class _CurrencyListViewState extends State<CurrencyListView> {
   }
 
   Widget _listRow(Currency currency) {
-    final TextStyle _titleTextStyle =
+    final TextStyle titleTextStyle =
         widget.theme?.titleTextStyle ?? _defaultTitleTextStyle;
-    final TextStyle _subtitleTextStyle =
+    final TextStyle subtitleTextStyle =
         widget.theme?.subtitleTextStyle ?? _defaultSubtitleTextStyle;
-    final _currencySignTextStyle =
+    final currencySignTextStyle =
         widget.theme?.currencySignTextStyle ?? _defaultCurrencySignTextStyle;
 
     return Material(
@@ -197,15 +193,15 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                           if (widget.showCurrencyCode) ...[
                             Text(
                               currency.code,
-                              style: _titleTextStyle,
+                              style: titleTextStyle,
                             ),
                           ],
                           if (widget.showCurrencyName) ...[
                             Text(
                               currency.name,
                               style: widget.showCurrencyCode
-                                  ? _subtitleTextStyle
-                                  : _titleTextStyle,
+                                  ? subtitleTextStyle
+                                  : titleTextStyle,
                             ),
                           ]
                         ],
@@ -218,7 +214,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   currency.symbol,
-                  style: _currencySignTextStyle,
+                  style: currencySignTextStyle,
                 ),
               ),
             ],
@@ -246,19 +242,21 @@ class _CurrencyListViewState extends State<CurrencyListView> {
   }
 
   void _filterSearchResults(String query) {
-    List<Currency> _searchResult = <Currency>[];
+    List<Currency> searchResult = <Currency>[];
 
     if (query.isEmpty) {
-      _searchResult.addAll(_currencyList);
+      searchResult.addAll(_currencyList);
     } else {
-      _searchResult = _currencyList
-          .where((c) =>
-              c.name.toLowerCase().contains(query.toLowerCase()) ||
-              c.code.toLowerCase().contains(query.toLowerCase()))
+      searchResult = _currencyList
+          .where(
+            (c) =>
+                c.name.toLowerCase().contains(query.toLowerCase()) ||
+                c.code.toLowerCase().contains(query.toLowerCase()),
+          )
           .toList();
     }
 
-    setState(() => _filteredList = _searchResult);
+    setState(() => _filteredList = searchResult);
   }
 
   TextStyle get _defaultTitleTextStyle => const TextStyle(fontSize: 17);

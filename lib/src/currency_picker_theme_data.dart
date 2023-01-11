@@ -30,12 +30,13 @@ class CurrencyPickerThemeData {
   /// By default it's fullscreen
   final double? bottomSheetHeight;
 
-  CurrencyPickerThemeData(
-      {this.shape,
-      this.flagSize,
-      this.titleTextStyle,
-      this.subtitleTextStyle,
-      this.currencySignTextStyle,
-      this.backgroundColor,
-      this.bottomSheetHeight});
+  CurrencyPickerThemeData({
+    this.shape,
+    this.flagSize,
+    this.titleTextStyle,
+    this.subtitleTextStyle,
+    this.currencySignTextStyle,
+    this.backgroundColor,
+    this.bottomSheetHeight,
+  });
 }
