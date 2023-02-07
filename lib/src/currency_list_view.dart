@@ -233,6 +233,15 @@ class _CurrencyListViewState extends State<CurrencyListView> {
       );
     }
 
+    // Verify if it is UEMOA XOF
+    if (currency.flag == "UEMOA") {
+      return Image.asset(
+        'uemoa.png'.imagePath,
+        package: 'currency_picker',
+        width: 27,
+      );
+    }
+
     return Text(
       CurrencyUtils.currencyToEmoji(currency),
       style: TextStyle(
