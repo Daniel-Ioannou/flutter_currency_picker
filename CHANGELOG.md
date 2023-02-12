@@ -1,3 +1,15 @@
+## 2.0.15
+* Add more currencies:
+  - West African CFA franc
+* Add parameter `useRootNavigator`
+  ``` Dart
+   showCurrencyPicker(
+     context: context,
+     useRootNavigator: true,
+     onSelect: (Currency currency) => print('Select currency: ${currency.name}'),
+   );
+  ```
+* Update dependencies
 ## 2.0.14
 * Add more currencies:
   - Zambian Kwacha
