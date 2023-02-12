@@ -45,6 +45,7 @@ void showCurrencyPicker({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  bool useRootNavigator = false,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
 }) {
@@ -60,6 +61,7 @@ void showCurrencyPicker({
     showFlag: showFlag,
     showCurrencyName: showCurrencyName,
     showCurrencyCode: showCurrencyCode,
+    useRootNavigator: useRootNavigator,
     favorite: favorite,
     currencyFilter: currencyFilter,
     theme: theme,

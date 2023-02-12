@@ -14,6 +14,7 @@ void showCurrencyListBottomSheet({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  bool useRootNavigator = false,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
 }) {
@@ -26,6 +27,7 @@ void showCurrencyListBottomSheet({
     context: context,
     isScrollControlled: true,
     shape: shape,
+    useRootNavigator: useRootNavigator,
     backgroundColor: theme?.backgroundColor,
     builder: (_) => _builder(
       context,
