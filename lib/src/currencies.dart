@@ -745,7 +745,7 @@ List<Map<String, dynamic>> currencies = [
     "code": "XOF",
     "name": "UEMOA CFA franc",
     "symbol": "FCFA",
-    "flag": "UEMOA",
+    "flag": "xof.png",
     "decimal_digits": 2,
     "number": 960,
     "name_plural": "UEMOA CFA francs",

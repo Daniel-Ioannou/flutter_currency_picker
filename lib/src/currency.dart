@@ -34,6 +34,8 @@ class Currency {
   ///True if symbol has space with amount
   final bool spaceBetweenAmountAndSymbol;
 
+  bool get isFlagImage => flag?.endsWith('.png') ?? false;
+
   Currency({
     required this.code,
     required this.name,
