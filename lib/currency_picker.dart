@@ -14,13 +14,25 @@ export 'package:currency_picker/src/currency_utils.dart';
 /// Show currency picker
 ///
 ///  `onSelect`: Called when a currency is select. The currency picker passes the new value to the callback (required)
+///
 ///  `showFlag`: Shows flag for each currency. Default value true (optional).
+///
 ///  `searchHint`: Option to customize hint of the search TextField (optional).
+///
 ///  `showCurrencyName`: Option to show/hide the currency name, default value true (optional).
+///
 ///  `showCurrencyCode`: Option to show/hide the currency code, default value true (optional).
+///
 ///  `currencyFilter`: Can be used to uses filter the Currency list (optional).
+///
 ///  `favorite`: The Currencies that will appear at the top of the list (optional).
+///
 ///  `theme`: can be used to customizing the country list bottom sheet (optional).
+///
+///  `useRootNavigator`: ensures that the root navigator is used to
+///  display the [BottomSheet] when set to `true`. This is useful in the case
+///  that a modal [BottomSheet] needs to be displayed above all other content
+///  but the caller is inside another [Navigator].
 ///
 /// This example demonstrates how to use `showCurrencyPicker`
 /// ```dart
@@ -45,6 +57,7 @@ void showCurrencyPicker({
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  bool useRootNavigator = false,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
 }) {
@@ -60,6 +73,7 @@ void showCurrencyPicker({
     showFlag: showFlag,
     showCurrencyName: showCurrencyName,
     showCurrencyCode: showCurrencyCode,
+    useRootNavigator: useRootNavigator,
     favorite: favorite,
     currencyFilter: currencyFilter,
     theme: theme,
