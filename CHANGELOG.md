@@ -1,3 +1,7 @@
+## 2.0.16
+* Add more currencies:
+  - Tunisian dinar
+
 ## 2.0.15
 * Add more currencies:
   - West African CFA franc
