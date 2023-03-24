@@ -122,8 +122,18 @@ class _CurrencyListViewState extends State<CurrencyListView> {
 
   @override
   Widget build(BuildContext context) {
-    final searchFieldDecoration =
-        widget.searchFieldDecoration ?? const InputDecoration();
+    final searchFieldDecoration = widget.searchFieldDecoration ??
+        InputDecoration(
+          labelText: widget.searchHint ?? "Search",
+          hintText: widget.searchHint ?? "Search",
+          prefixIcon: const Icon(Icons.search),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: const Color(0xFF8C98A8).withOpacity(0.2),
+            ),
+          ),
+        );
+
     return Column(
       children: <Widget>[
         const SizedBox(height: 12),
@@ -132,16 +142,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: widget.showSearchField
               ? TextField(
                   controller: _searchController,
-                  decoration: searchFieldDecoration.copyWith(
-                    labelText: widget.searchHint ?? "Search",
-                    hintText: widget.searchHint ?? "Search",
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: const Color(0xFF8C98A8).withOpacity(0.2),
-                      ),
-                    ),
-                  ),
+                  decoration: searchFieldDecoration,
                   onChanged: _filterSearchResults,
                 )
               : Container(),
