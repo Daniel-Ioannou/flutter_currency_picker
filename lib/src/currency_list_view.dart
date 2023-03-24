@@ -45,7 +45,12 @@ class CurrencyListView extends StatefulWidget {
   /// Hint of the search TextField (optional).
   ///
   /// Defaults Search.
+  @Deprecated('Set the hint in searchFieldDecoration instead')
   final String? searchHint;
+
+  /// The input decoration of the search field in
+  /// the currency bottom sheet
+  final InputDecoration? searchFieldDecoration;
 
   final ScrollController? controller;
 
@@ -61,7 +66,9 @@ class CurrencyListView extends StatefulWidget {
     this.favorite,
     this.currencyFilter,
     this.showSearchField = true,
-    this.searchHint,
+    @Deprecated('Set the hint in searchFieldDecoration instead')
+        this.searchHint,
+    this.searchFieldDecoration,
     this.showCurrencyCode = true,
     this.showCurrencyName = true,
     this.showFlag = true,
@@ -115,6 +122,8 @@ class _CurrencyListViewState extends State<CurrencyListView> {
 
   @override
   Widget build(BuildContext context) {
+    final searchFieldDecoration =
+        widget.searchFieldDecoration ?? const InputDecoration();
     return Column(
       children: <Widget>[
         const SizedBox(height: 12),
@@ -123,7 +132,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: widget.showSearchField
               ? TextField(
                   controller: _searchController,
-                  decoration: InputDecoration(
+                  decoration: searchFieldDecoration.copyWith(
                     labelText: widget.searchHint ?? "Search",
                     hintText: widget.searchHint ?? "Search",
                     prefixIcon: const Icon(Icons.search),

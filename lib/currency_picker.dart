@@ -19,6 +19,8 @@ export 'package:currency_picker/src/currency_utils.dart';
 ///
 ///  `searchHint`: Option to customize hint of the search TextField (optional).
 ///
+///  `searchFieldDecoration`: Option to customize the decoration of the search TextField in the currency bottom sheet(optional).
+///
 ///  `showCurrencyName`: Option to show/hide the currency name, default value true (optional).
 ///
 ///  `showCurrencyCode`: Option to show/hide the currency code, default value true (optional).
@@ -52,7 +54,9 @@ void showCurrencyPicker({
   required ValueChanged<Currency> onSelect,
   List<String>? favorite,
   List<String>? currencyFilter,
-  String? searchHint,
+  @Deprecated('Set the hint in searchFieldDecoration instead')
+      String? searchHint,
+  InputDecoration? searchFieldDecoration,
   bool showSearchField = true,
   bool showFlag = true,
   bool showCurrencyName = true,
@@ -70,6 +74,7 @@ void showCurrencyPicker({
     onSelect: onSelect,
     showSearchField: showSearchField,
     searchHint: searchHint,
+    searchFieldDecoration: searchFieldDecoration,
     showFlag: showFlag,
     showCurrencyName: showCurrencyName,
     showCurrencyCode: showCurrencyCode,
