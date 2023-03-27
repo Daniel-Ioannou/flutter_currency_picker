@@ -223,7 +223,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  currency.symbol,
+                  currency.uniqueSymbol,
                   style: currencySignTextStyle,
                 ),
               ),

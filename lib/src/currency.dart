@@ -8,6 +8,9 @@ class Currency {
   ///The currency symbol
   final String symbol;
 
+  ///The currency's unique symbol (example: AUD: AU$)
+  final String uniqueSymbol;
+
   ///The currency flag code
   ///
   /// To get flag unicode(Emoji) use [CurrencyUtils.currencyToEmoji]
@@ -40,6 +43,7 @@ class Currency {
     required this.code,
     required this.name,
     required this.symbol,
+    required this.uniqueSymbol,
     required this.flag,
     required this.number,
     required this.decimalDigits,
@@ -54,6 +58,7 @@ class Currency {
       : code = json['code'],
         name = json['name'],
         symbol = json['symbol'],
+        uniqueSymbol = json['uniqueSymbol'],
         number = json['number'],
         flag = json['flag'],
         decimalDigits = json['decimal_digits'],
@@ -67,6 +72,7 @@ class Currency {
         'code': code,
         'name': name,
         'symbol': symbol,
+        'uniqueSymbol': uniqueSymbol,
         'number': number,
         'flag': flag,
         'decimal_digits': decimalDigits,
