@@ -1469,4 +1469,17 @@ List<Map<String, dynamic>> currencies = [
     "space_between_amount_and_symbol": false,
     "symbol_on_left": true,
   },
+  {
+    "code": "ZW",
+    "name": "Zimbabwean Dollar",
+    "symbol": "\$ZWL",
+    "flag": "ZW",
+    "decimal_digits": 2,
+    "number": 932,
+    "name_plural": "Zimbabwean dollars",
+    "thousands_separator": " ",
+    "decimal_separator": ",",
+    "space_between_amount_and_symbol": false,
+    "symbol_on_left": true,
+  },
 ];
