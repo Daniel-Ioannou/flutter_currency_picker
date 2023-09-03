@@ -4,6 +4,7 @@
   - Zimbabwean dollar
 * Fix Tunisian Dinars
 * Fix Bangladeshi Taka
+* Update SDK to `>=2.12.0 <4.0.0`
 
 ## 2.0.16
 * Add more currencies:
