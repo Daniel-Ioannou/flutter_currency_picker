@@ -3,6 +3,7 @@
   - Iraqi dinar
   - Zimbabwean dollar
 * Fix Tunisian Dinars
+* Fix Bangladeshi Taka
 
 ## 2.0.16
 * Add more currencies:
