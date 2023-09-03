@@ -1,3 +1,9 @@
+## 2.0.17
+* Add more currencies:
+  - Iraqi dinar
+  - Zimbabwean dollar
+* Fix Tunisian Dinars
+
 ## 2.0.16
 * Add more currencies:
   - Tunisian dinar
