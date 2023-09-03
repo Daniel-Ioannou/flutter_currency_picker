@@ -1370,13 +1370,13 @@ List<Map<String, dynamic>> currencies = [
     "name": "Tunisian dinar",
     "symbol": "د.ت",
     "flag": "TN",
-    "decimal_digits": 2,
+    "decimal_digits": 3,
     "number": 788,
     "name_plural": "Tunisian dinars",
-    "thousands_separator": ",",
-    "decimal_separator": ".",
-    "space_between_amount_and_symbol": false,
-    "symbol_on_left": false,
+    "thousands_separator": ".",
+    "decimal_separator": ",",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": true,
   },
   {
     "code": "UGX",
@@ -1470,7 +1470,7 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": true,
   },
   {
-    "code": "ZW",
+    "code": "ZWL",
     "name": "Zimbabwean Dollar",
     "symbol": "\$ZWL",
     "flag": "ZW",
@@ -1482,4 +1482,17 @@ List<Map<String, dynamic>> currencies = [
     "space_between_amount_and_symbol": false,
     "symbol_on_left": true,
   },
+   {
+    "code": "IQD",
+    "name": "Iraqi Dinar",
+    "symbol": "د.ع",
+    "flag": "IQD",
+    "decimal_digits": 3,
+    "number": 368,
+    "name_plural": "Iraqi dinars",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": true
+  }
 ];
