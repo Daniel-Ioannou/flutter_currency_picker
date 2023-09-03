@@ -549,7 +549,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "BDT",
     "name": "Bangladeshi Taka",
-    "symbol": " Tk",
+    "symbol": "৳",
     "flag": "BDT",
     "decimal_digits": 2,
     "number": 50,
@@ -557,7 +557,7 @@ List<Map<String, dynamic>> currencies = [
     "thousands_separator": ",",
     "decimal_separator": ".",
     "space_between_amount_and_symbol": true,
-    "symbol_on_left": true,
+    "symbol_on_left": false,
   },
   {
     "code": "BBD",
