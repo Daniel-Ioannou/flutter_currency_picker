@@ -31,10 +31,10 @@ class HomePage extends StatelessWidget {
               showSearchField: true,
               showCurrencyName: true,
               showCurrencyCode: true,
+              favorite: ['eur'],
               onSelect: (Currency currency) {
                 print('Select currency: ${currency.name}');
               },
-              favorite: ['SEK'],
             );
           },
           child: const Text('Show currency picker'),
