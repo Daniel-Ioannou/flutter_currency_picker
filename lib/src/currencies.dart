@@ -1482,7 +1482,7 @@ List<Map<String, dynamic>> currencies = [
     "space_between_amount_and_symbol": false,
     "symbol_on_left": true,
   },
-   {
+  {
     "code": "IQD",
     "name": "Iraqi Dinar",
     "symbol": "د.ع",
@@ -1494,5 +1494,18 @@ List<Map<String, dynamic>> currencies = [
     "decimal_separator": ".",
     "space_between_amount_and_symbol": true,
     "symbol_on_left": true
-  }
+  },
+  {
+    "code": "MVR",
+    "name": "Maldivian Rufiyaa",
+    "symbol": "/-",
+    "flag": "MV",
+    "decimal_digits": 2,
+    "number": 462,
+    "name_plural": "Maldivian Rufiyaa",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": false,
+    "symbol_on_left": false
+  },
 ];
