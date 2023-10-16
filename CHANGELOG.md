@@ -1,3 +1,29 @@
+## 2.0.18
+* Add more currencies:
+  - Maldivian Rufiyaa
+* Add styling options for search field input decoration.
+  ``` Dart
+  showCurrencyPicker(
+    context: context,
+    theme: CurrencyPickerThemeData(
+      // Optional. Styles the search field.
+      inputDecoration: InputDecoration(
+        labelText: 'Search',
+        hintText: 'Start typing to search',
+        prefixIcon: const Icon(Icons.search),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: const Color(0xFF8C98A8).withOpacity(0.2),
+          ),
+        ),
+      ),
+    ),
+    onSelect: (Currency currency) {
+      print('Select currency: ${currency.name}');
+    },
+  );
+  ```
+  
 ## 2.0.17
 * Add more currencies:
   - Iraqi dinar
