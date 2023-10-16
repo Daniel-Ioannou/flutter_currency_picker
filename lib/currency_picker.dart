@@ -52,6 +52,10 @@ void showCurrencyPicker({
   required ValueChanged<Currency> onSelect,
   List<String>? favorite,
   List<String>? currencyFilter,
+  @Deprecated(
+    'Use inputDecoration instead. '
+    'This feature was deprecated after v2.0.18.',
+  )
   String? searchHint,
   bool showSearchField = true,
   bool showFlag = true,

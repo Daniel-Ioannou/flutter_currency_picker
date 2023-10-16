@@ -20,6 +20,11 @@ class CurrencyPickerThemeData {
   /// If null, the style will be set to [TextStyle(fontSize: 18);]
   final TextStyle? currencySignTextStyle;
 
+  ///The decoration used for the search field
+  ///
+  /// It defaults to a basic outline-bordered input decoration
+  final InputDecoration? inputDecoration;
+
   ///The flag size.
   ///
   /// If null, set to 25
@@ -34,6 +39,7 @@ class CurrencyPickerThemeData {
     this.shape,
     this.flagSize,
     this.titleTextStyle,
+    this.inputDecoration,
     this.subtitleTextStyle,
     this.currencySignTextStyle,
     this.backgroundColor,
