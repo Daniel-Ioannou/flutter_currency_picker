@@ -911,6 +911,19 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": false,
   },
   {
+    "code": "IQD",
+    "name": "Iraqi Dinar",
+    "symbol": "د.ع",
+    "flag": "IQD",
+    "decimal_digits": 3,
+    "number": 368,
+    "name_plural": "Iraqi dinars",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": true
+  },
+  {
     "code": "JMD",
     "name": "Jamaica Dollar",
     "symbol": "J\$",
@@ -1026,6 +1039,19 @@ List<Map<String, dynamic>> currencies = [
     "decimal_separator": ",",
     "space_between_amount_and_symbol": true,
     "symbol_on_left": false,
+  },
+  {
+    "code": "MVR",
+    "name": "Maldivian Rufiyaa",
+    "symbol": "/-",
+    "flag": "MV",
+    "decimal_digits": 2,
+    "number": 462,
+    "name_plural": "Maldivian Rufiyaa",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": false,
+    "symbol_on_left": false
   },
   {
     "code": "MWK",
@@ -1481,31 +1507,5 @@ List<Map<String, dynamic>> currencies = [
     "decimal_separator": ",",
     "space_between_amount_and_symbol": false,
     "symbol_on_left": true,
-  },
-  {
-    "code": "IQD",
-    "name": "Iraqi Dinar",
-    "symbol": "د.ع",
-    "flag": "IQD",
-    "decimal_digits": 3,
-    "number": 368,
-    "name_plural": "Iraqi dinars",
-    "thousands_separator": ",",
-    "decimal_separator": ".",
-    "space_between_amount_and_symbol": true,
-    "symbol_on_left": true
-  },
-  {
-    "code": "MVR",
-    "name": "Maldivian Rufiyaa",
-    "symbol": "/-",
-    "flag": "MV",
-    "decimal_digits": 2,
-    "number": 462,
-    "name_plural": "Maldivian Rufiyaa",
-    "thousands_separator": ",",
-    "decimal_separator": ".",
-    "space_between_amount_and_symbol": false,
-    "symbol_on_left": false
   },
 ];
