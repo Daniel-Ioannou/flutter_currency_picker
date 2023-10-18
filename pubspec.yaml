@@ -8,12 +8,11 @@ version: 2.0.19
 
 environment:
   sdk: '>=2.12.0 <4.0.0'
-  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  collection: ^1.17.0
+  collection: ^1.17.2
 
 flutter:
   assets:
@@ -22,6 +21,6 @@ flutter:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lint: ^2.0.1
+  lint: ^2.1.2
 
 
