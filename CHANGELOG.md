@@ -1,3 +1,8 @@
+## 2.0.19
+* Fix Kazakhstan Tenge decimal separator
+* Fix Barbados Dollar plural name
+* Fix Vietnamese Dong decimal separator
+
 ## 2.0.18
 * Add more currencies:
   - Maldivian Rufiyaa
