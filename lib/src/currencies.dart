@@ -16,7 +16,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "MATIC",
     "name": "Polygon",
-    "symbol": 'matic_logo.svg',
+    "symbol": 'matic_logo.png',
     "flag": "MATIC",
     "decimal_digits": 4,
     "name_plural": "Polygon",

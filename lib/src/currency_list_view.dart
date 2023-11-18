@@ -1,6 +1,5 @@
 import 'package:currency_picker/src/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'currency.dart';
 import 'currency_picker_theme_data.dart';
@@ -214,11 +213,11 @@ class _CurrencyListViewState extends State<CurrencyListView> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: currency.symbol.contains('.svg')
-                    ? SvgPicture.asset(
+                child: currency.symbol.contains('.png')
+                    ? Image.asset(
                         currency.symbol.imagePath,
-                        width: 18,
-                        height: 18,
+                        package: 'currency_picker',
+                        width: 20,
                       )
                     : Text(
                         currency.symbol,
