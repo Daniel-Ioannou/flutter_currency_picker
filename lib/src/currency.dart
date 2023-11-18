@@ -14,7 +14,7 @@ class Currency {
   final String? flag;
 
   ///The currency number
-  final int number;
+  final int? number;
 
   ///The currency decimal digits
   final int decimalDigits;
