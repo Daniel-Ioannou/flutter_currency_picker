@@ -1,5 +1,6 @@
 import 'package:currency_picker/src/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'currency.dart';
 import 'currency_picker_theme_data.dart';
@@ -123,16 +124,17 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: widget.showSearchField
               ? TextField(
                   controller: _searchController,
-                  decoration: widget.theme?.inputDecoration ?? InputDecoration(
-                    labelText: widget.searchHint ?? "Search",
-                    hintText: widget.searchHint ?? "Search",
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: const Color(0xFF8C98A8).withOpacity(0.2),
+                  decoration: widget.theme?.inputDecoration ??
+                      InputDecoration(
+                        labelText: widget.searchHint ?? "Search",
+                        hintText: widget.searchHint ?? "Search",
+                        prefixIcon: const Icon(Icons.search),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: const Color(0xFF8C98A8).withOpacity(0.2),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
                   onChanged: _filterSearchResults,
                 )
               : Container(),
@@ -212,10 +214,16 @@ class _CurrencyListViewState extends State<CurrencyListView> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  currency.symbol,
-                  style: currencySignTextStyle,
-                ),
+                child: currency.symbol.contains('.svg')
+                    ? SvgPicture.asset(
+                        currency.symbol.imagePath,
+                        width: 18,
+                        height: 18,
+                      )
+                    : Text(
+                        currency.symbol,
+                        style: currencySignTextStyle,
+                      ),
               ),
             ],
           ),
