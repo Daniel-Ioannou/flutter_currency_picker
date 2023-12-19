@@ -148,7 +148,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                   child: Divider(thickness: 1),
                 ),
               ],
-              ..._filteredList.map<Widget>((currency) => _listRow(currency))
+              ..._filteredList.map<Widget>((currency) => _listRow(currency)),
             ],
           ),
         ),
@@ -203,7 +203,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                                   ? subtitleTextStyle
                                   : titleTextStyle,
                             ),
-                          ]
+                          ],
                         ],
                       ),
                     ),
