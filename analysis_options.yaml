@@ -9,13 +9,14 @@ linter:
     prefer_initializing_formals: false
     avoid_escaping_inner_quotes: false
     always_use_package_imports: false
+    unnecessary_library_directive: false
     library_private_types_in_public_api: false
     avoid_classes_with_only_static_members: false
     no_leading_underscores_for_local_identifiers: false
 
 
 analyzer:
-  strong-mode:
-    implicit-casts: true
   errors:
     missing_required_param: error
+  language:
+    strict-casts: false

@@ -921,7 +921,7 @@ List<Map<String, dynamic>> currencies = [
     "thousands_separator": ",",
     "decimal_separator": ".",
     "space_between_amount_and_symbol": true,
-    "symbol_on_left": true
+    "symbol_on_left": true,
   },
   {
     "code": "JMD",
@@ -1051,7 +1051,7 @@ List<Map<String, dynamic>> currencies = [
     "thousands_separator": ",",
     "decimal_separator": ".",
     "space_between_amount_and_symbol": false,
-    "symbol_on_left": false
+    "symbol_on_left": false,
   },
   {
     "code": "MWK",
@@ -1474,7 +1474,7 @@ List<Map<String, dynamic>> currencies = [
     "name": "Yemen Rial",
     "symbol": "﷼",
     "flag": "YER",
-    "decimal_digits": 0,
+    "decimal_digits": 2,
     "number": 886,
     "name_plural": "Yemeni rials",
     "thousands_separator": ",",

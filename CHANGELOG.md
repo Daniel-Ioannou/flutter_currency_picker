@@ -1,3 +1,6 @@
+## 2.0.20
+*  Trim search query
+  
 ## 2.0.19
 * Fix Kazakhstan Tenge decimal separator
 * Fix Barbados Dollar plural name
