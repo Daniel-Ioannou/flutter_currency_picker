@@ -781,6 +781,19 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": true,
   },
   {
+    "code": "CUP",
+    "name": "Cuban Peso",
+    "symbol": "\$MN",
+    "flag": "CU",
+    "decimal_digits": 2,
+    "number": 192,
+    "name_plural": "Cuban pesos",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": true
+  },
+  {
     "code": "DOP",
     "name": "Dominican Republic Peso",
     "symbol": "RD\$",
