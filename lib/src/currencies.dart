@@ -495,6 +495,19 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": false,
   },
   {
+    "code": "AOA",
+    "name": "Angolan Kwanza",
+    "symbol": "Kz",
+    "flag": "AO",
+    "decimal_digits": 2,
+    "number": 973,
+    "name_plural": "Angolan kwanzas",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": true
+  },
+  {
     "code": "ARS",
     "name": "Argentine Peso",
     "symbol": "\$",
