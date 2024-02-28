@@ -1015,6 +1015,19 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": false,
   },
   {
+    "code": "LBP",
+    "name": "Lebanese Pound",
+    "symbol": "ل.ل",
+    "flag": "LB",
+    "decimal_digits": 2,
+    "number": 422,
+    "name_plural": "Lebanese pounds",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": true
+  },
+  {
     "code": "LRD",
     "name": "Liberia Dollar",
     "symbol": "\$",
