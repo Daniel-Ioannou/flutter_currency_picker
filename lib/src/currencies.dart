@@ -1405,6 +1405,19 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": true,
   },
   {
+    "code": "TOP",
+    "name": "Tongan Pa'anga",
+    "symbol": "T\$",
+    "flag": "TO",
+    "decimal_digits": 2,
+    "number": 776,
+    "name_plural": "Tongan pa'angas",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": true
+  },
+  {
     "code": "TTD",
     "name": "Trinidad and Tobago Dollar",
     "symbol": "TT\$",
