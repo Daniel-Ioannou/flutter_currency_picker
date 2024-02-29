@@ -1,3 +1,11 @@
+## 2.0.21
+* Add more currencies:
+  - Angolan Kwanza
+  - Cuban Peso
+  - Tongan Pa'anga
+  - Malagasy Ariary
+  - Lebanese Pound
+  - 
 ## 2.0.20
 *  Trim search query
   
