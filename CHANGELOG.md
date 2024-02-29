@@ -5,7 +5,7 @@
   - Tongan Pa'anga
   - Malagasy Ariary
   - Lebanese Pound
-  - 
+
 ## 2.0.20
 *  Trim search query
   
