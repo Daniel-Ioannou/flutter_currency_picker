@@ -29,6 +29,8 @@ export 'package:currency_picker/src/currency_utils.dart';
 ///
 ///  `theme`: can be used to customizing the country list bottom sheet (optional).
 ///
+///  `showDragHandle`: Can be used to show the drag handle (optional).
+///
 ///  `useRootNavigator`: ensures that the root navigator is used to
 ///  display the [BottomSheet] when set to `true`. This is useful in the case
 ///  that a modal [BottomSheet] needs to be displayed above all other content
@@ -57,11 +59,12 @@ void showCurrencyPicker({
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
   bool useRootNavigator = false,
+  bool showDragHandle = false,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
   @Deprecated(
     'Use inputDecoration instead. '
-        'This feature was deprecated after v2.0.18.',
+    'This feature was deprecated after v2.0.18.',
   )
   String? searchHint,
 }) {
@@ -82,6 +85,7 @@ void showCurrencyPicker({
     currencyFilter: currencyFilter,
     theme: theme,
     physics: physics,
+    showDragHandle: showDragHandle,
   );
 }
 
