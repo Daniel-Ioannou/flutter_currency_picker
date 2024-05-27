@@ -976,7 +976,7 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": false,
   },
   {
-    "code": "`",
+    "code": "KZT",
     "name": "Kazakhstan Tenge",
     "symbol": "〒",
     "flag": "KZT",
