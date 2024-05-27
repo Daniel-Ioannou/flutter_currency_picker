@@ -1507,7 +1507,7 @@ List<Map<String, dynamic>> currencies = [
     "decimal_separator": ".",
     "space_between_amount_and_symbol": true,
     "symbol_on_left": false,
-  }
+  },
   {
     "code": "UYU",
     "name": "Uruguay Peso",
