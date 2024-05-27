@@ -976,7 +976,7 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": false,
   },
   {
-    "code": "KZT",
+    "code": "`",
     "name": "Kazakhstan Tenge",
     "symbol": "〒",
     "flag": "KZT",
@@ -1495,6 +1495,19 @@ List<Map<String, dynamic>> currencies = [
     "space_between_amount_and_symbol": false,
     "symbol_on_left": false,
   },
+  {
+    "code": "UZS",
+    "name": "Uzbekistan Sum",
+    "symbol": "UZS",
+    "flag": "UZ",
+    "decimal_digits": 2,
+    "number": 860,
+    "name_plural": "Uzbekistan Sums",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": true,
+    "symbol_on_left": false,
+  }
   {
     "code": "UYU",
     "name": "Uruguay Peso",
