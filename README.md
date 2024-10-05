@@ -49,6 +49,26 @@ showCurrencyPicker(
       currencyFilter: <String>['EUR', 'GBP', 'USD', 'AUD', 'CAD', 'JPY', 'HKD', 'CHF', 'SEK', 'ILS'],
    );
   ``` 
+* `excludedCurrencies`: Can be used to exclude the Currency list (optional).
+  ```Dart
+   showCurrencyPicker(
+      context: context,
+      onSelect: (Currency currency) {
+         print('Select currency: ${currency.name}');
+      },
+      excludedCurrencies: <String>['EUR', 'GBP', 'USD', 'AUD', 'CAD', 'JPY', 'HKD', 'CHF', 'SEK', 'ILS'],
+   );
+  ``` 
+* `customCurrencies`: Can be used to add custom currencies (optional).
+  ```Dart
+   showCurrencyPicker(
+      context: context,
+      onSelect: (Currency currency) {
+         print('Select currency: ${currency.name}');
+      },
+      customCurrencies: <Currency>[Currency.from(json)],
+   );
+  ``` 
 * `favorite`: Can be used to show the favorite currencies at the top of the list (optional).
 * `theme`: Can be used to customizing the currency list bottom sheet. (optional).
   ```Dart
