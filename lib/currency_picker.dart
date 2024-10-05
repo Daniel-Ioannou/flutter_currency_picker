@@ -53,6 +53,7 @@ void showCurrencyPicker({
   List<String>? favorite,
   List<String>? currencyFilter,
   List<String>? excludedCurrencies,
+  List<Currency>? customCurrencies,
   bool showSearchField = true,
   bool showFlag = true,
   bool showCurrencyName = true,
@@ -86,6 +87,7 @@ void showCurrencyPicker({
     favorite: favorite,
     currencyFilter: currencyFilter,
     excludedCurrencies: excludedCurrencies,
+    customCurrencies: customCurrencies,
     theme: theme,
     physics: physics,
   );

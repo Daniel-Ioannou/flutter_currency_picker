@@ -27,6 +27,9 @@ class CurrencyListView extends StatefulWidget {
   /// It takes a list of Currency code.
   final List<String>? excludedCurrencies;
 
+  /// Takes list of Currency objects.
+  final List<Currency>? customCurrencies;
+
   /// Shows flag for each currency (optional).
   ///
   /// Defaults true.
@@ -66,6 +69,7 @@ class CurrencyListView extends StatefulWidget {
     this.favorite,
     this.currencyFilter,
     this.excludedCurrencies,
+    this.customCurrencies,
     this.showSearchField = true,
     this.searchHint,
     this.showCurrencyCode = true,
@@ -108,6 +112,10 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           widget.excludedCurrencies!.map((code) => code.toUpperCase()).toList();
       _currencyList
           .removeWhere((element) => currencyFilter.contains(element.code));
+    }
+
+    if (widget.customCurrencies != null) {
+      _currencyList.addAll(widget.customCurrencies!);
     }
 
     if (widget.favorite != null) {
