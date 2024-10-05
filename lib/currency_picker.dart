@@ -52,6 +52,7 @@ void showCurrencyPicker({
   required ValueChanged<Currency> onSelect,
   List<String>? favorite,
   List<String>? currencyFilter,
+  List<String>? excludedCurrencies,
   bool showSearchField = true,
   bool showFlag = true,
   bool showCurrencyName = true,
@@ -69,6 +70,10 @@ void showCurrencyPicker({
     showCurrencyName || showCurrencyCode,
     'showCurrencyName and showCurrencyCode cannot be both false',
   );
+  assert(
+    currencyFilter == null || excludedCurrencies == null,
+    'currencyFilter and excludedCurrencies cannot be both used at the same time',
+  );
   currency_list.showCurrencyListBottomSheet(
     context: context,
     onSelect: onSelect,
@@ -80,6 +85,7 @@ void showCurrencyPicker({
     useRootNavigator: useRootNavigator,
     favorite: favorite,
     currencyFilter: currencyFilter,
+    excludedCurrencies: excludedCurrencies,
     theme: theme,
     physics: physics,
   );
