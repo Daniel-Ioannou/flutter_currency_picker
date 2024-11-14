@@ -1589,7 +1589,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "IRR",
     "name": "Iranian rial",
-    "symbol": "Rls",
+    "symbol": "﷼",
     "flag": "IR",
     "decimal_digits": 2,
     "number": 364,
@@ -1602,7 +1602,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "LYD",
     "name": "Libyan dinar",
-    "symbol": "LD",
+    "symbol": "ل.د",
     "flag": "LY",
     "decimal_digits": 3,
     "number": 434,
@@ -1619,7 +1619,7 @@ List<Map<String, dynamic>> currencies = [
     "flag": "TJ",
     "decimal_digits": 2,
     "number": 972,
-    "name_plural": "Tajikistani somoni",
+    "name_plural": "Tajikistani somonis",
     "thousands_separator": ",",
     "decimal_separator": ".",
     "space_between_amount_and_symbol": true,
@@ -1628,7 +1628,7 @@ List<Map<String, dynamic>> currencies = [
   {
     "code": "TMT",
     "name": "Turkmenistani manat",
-    "symbol": "manat",
+    "symbol": "m",
     "flag": "TM",
     "decimal_digits": 2,
     "number": 934,
