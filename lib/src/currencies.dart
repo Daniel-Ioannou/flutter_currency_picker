@@ -898,6 +898,19 @@ List<Map<String, dynamic>> currencies = [
     "symbol_on_left": true,
   },
   {
+    "code": "GNF",
+    "name": "Guinean Franc",
+    "symbol": "FG",
+    "flag": "GNF",
+    "decimal_digits": 2,
+    "number": 324,
+    "name_plural": "Guinean Francs",
+    "thousands_separator": ",",
+    "decimal_separator": ".",
+    "space_between_amount_and_symbol": false,
+    "symbol_on_left": true
+  },
+  {
     "code": "GYD",
     "name": "Guyana Dollar",
     "symbol": "\$",
