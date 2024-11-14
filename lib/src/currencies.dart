@@ -1,19 +1,6 @@
 //Order by Most traded currencies: https://en.wikipedia.org/wiki/Template:Most_traded_currencies
 List<Map<String, dynamic>> currencies = [
   {
-  "code": "IRR",
-  "name": "Iranian Rial",
-  "symbol": "﷼",
-  "flag": "IRN",
-  "decimal_digits": 0,
-  "number": 364,
-  "name_plural": "Iranian rials",
-  "thousands_separator": ",",
-  "decimal_separator": ".",
-  "space_between_amount_and_symbol": false,
-  "symbol_on_left": false
-},
-  {
     "code": "USD",
     "name": "United States Dollar",
     "symbol": "\$",
