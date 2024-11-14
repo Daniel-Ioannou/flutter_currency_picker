@@ -1638,18 +1638,4 @@ List<Map<String, dynamic>> currencies = [
     "space_between_amount_and_symbol": true,
     "symbol_on_left": false,
   },
-  // federalreserve.gov still use VEB instead of VEF
-  {
-    "code": "VEB",
-    "name": "Venezuela Bolívar",
-    "symbol": "Bs",
-    "flag": "VEB",
-    "decimal_digits": 2,
-    "number": 862,
-    "name_plural": "Venezuelan bolívars",
-    "thousands_separator": ".",
-    "decimal_separator": ",",
-    "space_between_amount_and_symbol": true,
-    "symbol_on_left": true,
-  },
 ];
