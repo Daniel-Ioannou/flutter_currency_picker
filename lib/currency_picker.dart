@@ -1,9 +1,10 @@
 library currency_picker;
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide WidgetBuilder;
 
 import 'src/currency.dart';
 import 'src/currency_list_bottom_sheet.dart' as currency_list;
+import 'src/currency_list_view.dart';
 import 'src/currency_picker_theme_data.dart';
 
 export 'package:currency_picker/src/currency.dart';
@@ -62,6 +63,7 @@ void showCurrencyPicker({
   bool showDragHandle = false,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
+  WidgetBuilder? noCurrencyFoundBuilder,
   @Deprecated(
     'Use inputDecoration instead. '
     'This feature was deprecated after v2.0.18.',
@@ -85,6 +87,7 @@ void showCurrencyPicker({
     currencyFilter: currencyFilter,
     theme: theme,
     physics: physics,
+    noCurrencyFoundBuilder: noCurrencyFoundBuilder,
     showDragHandle: showDragHandle,
   );
 }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide WidgetBuilder ;
 
 import 'currency.dart';
 import 'currency_list_view.dart';
@@ -18,6 +18,7 @@ void showCurrencyListBottomSheet({
   bool showDragHandle = false,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
+  WidgetBuilder? noCurrencyFoundBuilder,
 }) {
   final ShapeBorder shape = theme?.shape ??
       const RoundedRectangleBorder(
@@ -43,6 +44,7 @@ void showCurrencyListBottomSheet({
       showCurrencyName,
       showCurrencyCode,
       theme,
+      noCurrencyFoundBuilder,
     ),
   );
 }
@@ -59,6 +61,7 @@ Widget _builder(
   bool showCurrencyName,
   bool showCurrencyCode,
   CurrencyPickerThemeData? theme,
+  WidgetBuilder? noCurrencyFoundBuilder,
 ) {
   final device = MediaQuery.of(context).size.height;
   final statusBarHeight = MediaQuery.of(context).padding.top;
@@ -77,6 +80,7 @@ Widget _builder(
       currencyFilter: currencyFilter,
       physics: physics,
       theme: theme,
+      noCurrencyFoundBuilder: noCurrencyFoundBuilder,
     ),
   );
 }

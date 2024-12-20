@@ -6,6 +6,8 @@ import 'currency_picker_theme_data.dart';
 import 'currency_service.dart';
 import 'currency_utils.dart';
 
+typedef WidgetBuilder = Widget Function();
+
 class CurrencyListView extends StatefulWidget {
   /// Called when a currency is select.
   ///
@@ -51,6 +53,8 @@ class CurrencyListView extends StatefulWidget {
 
   final ScrollPhysics? physics;
 
+  final WidgetBuilder? noCurrencyFoundBuilder;
+
   /// An optional argument for for customizing the
   /// currency list bottom sheet.
   final CurrencyPickerThemeData? theme;
@@ -68,6 +72,7 @@ class CurrencyListView extends StatefulWidget {
     this.physics,
     this.controller,
     this.theme,
+    this.noCurrencyFoundBuilder,
   }) : super(key: key);
 
   @override
@@ -148,11 +153,27 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                   child: Divider(thickness: 1),
                 ),
               ],
-              ..._filteredList.map<Widget>((currency) => _listRow(currency)),
+              if (_filteredList.isNotEmpty)
+                ..._filteredList.map<Widget>((currency) => _listRow(currency)),
+              if (_filteredList.isEmpty)
+                _defaultNoCurrencyFoundBuilder(widget.noCurrencyFoundBuilder?.call()),
             ],
           ),
         ),
       ],
+    );
+  }
+
+  Widget _defaultNoCurrencyFoundBuilder(Widget? widget) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(
+        minWidth: double.infinity,
+        minHeight: 200.0,
+      ),
+      child: Align(
+        alignment: Alignment.center,
+        child: widget ?? const Text("No currency found."),
+      ),
     );
   }
 
