@@ -15,6 +15,7 @@ void showCurrencyListBottomSheet({
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
   bool useRootNavigator = false,
+  bool showDragHandle = false,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
 }) {
@@ -29,6 +30,7 @@ void showCurrencyListBottomSheet({
     shape: shape,
     useRootNavigator: useRootNavigator,
     backgroundColor: theme?.backgroundColor,
+    showDragHandle: showDragHandle,
     builder: (_) => _builder(
       context,
       onSelect,
