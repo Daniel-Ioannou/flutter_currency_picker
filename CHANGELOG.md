@@ -1,3 +1,22 @@
+## 2.0.22
+* Add more currencies:
+  - Uzbekistani Sum
+  - Venezuela Bolívar
+  - Iranian rial
+  - Libyan dinar
+  - Tajikistani somoni
+  - Turkmenistani manat
+* Add add an option to show the drag handle
+  ``` Dart
+  showCurrencyPicker(
+    context: context,
+    showDragHandle: true,
+    onSelect: (Currency currency) {
+      print('Select currency: ${currency.name}');
+    },
+  );
+  ```
+  
 ## 2.0.21
 * Add more currencies:
   - Angolan Kwanza
