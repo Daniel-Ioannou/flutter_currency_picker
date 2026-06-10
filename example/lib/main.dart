@@ -27,11 +27,10 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             showCurrencyPicker(
               context: context,
-              showFlag: true,
+              showDragHandle: true,
               showSearchField: true,
               showCurrencyName: true,
               showCurrencyCode: true,
-              favorite: ['eur'],
               onSelect: (Currency currency) {
                 print('Select currency: ${currency.name}');
               },
