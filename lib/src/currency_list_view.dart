@@ -1,4 +1,5 @@
 import 'package:currency_picker/src/extensions.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'currency.dart';
@@ -123,16 +124,17 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: widget.showSearchField
               ? TextField(
                   controller: _searchController,
-                  decoration: widget.theme?.inputDecoration ?? InputDecoration(
-                    labelText: widget.searchHint ?? "Search",
-                    hintText: widget.searchHint ?? "Search",
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: const Color(0xFF8C98A8).withOpacity(0.2),
+                  decoration: widget.theme?.inputDecoration ??
+                      InputDecoration(
+                        labelText: widget.searchHint ?? "Search",
+                        hintText: widget.searchHint ?? "Search",
+                        prefixIcon: const Icon(Icons.search),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: const Color(0xFF8C98A8).withOpacity(0.2),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
                   onChanged: _filterSearchResults,
                 )
               : Container(),
@@ -241,12 +243,21 @@ class _CurrencyListViewState extends State<CurrencyListView> {
       );
     }
 
-    return Text(
-      CurrencyUtils.currencyToEmoji(currency),
-      style: TextStyle(
-        fontSize: widget.theme?.flagSize ?? 25,
-      ),
-    );
+    // use png in asset for web
+    if (kIsWeb) {
+      return Image.asset(
+        currency.flag!.imagePathPNG,
+        package: 'currency_picker',
+        width: 27,
+      );
+    } else {
+      return Text(
+        CurrencyUtils.currencyToEmoji(currency),
+        style: TextStyle(
+          fontSize: widget.theme?.flagSize ?? 25,
+        ),
+      );
+    }
   }
 
   void _filterSearchResults(String query) {
