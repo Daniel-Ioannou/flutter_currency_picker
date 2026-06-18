@@ -47,6 +47,8 @@ class CurrencyListView extends StatefulWidget {
   /// Defaults Search.
   final String? searchHint;
 
+  final bool textFieldAutoCorrect;
+
   final ScrollController? controller;
 
   final ScrollPhysics? physics;
@@ -65,6 +67,7 @@ class CurrencyListView extends StatefulWidget {
     this.showCurrencyCode = true,
     this.showCurrencyName = true,
     this.showFlag = true,
+    this.textFieldAutoCorrect = false,
     this.physics,
     this.controller,
     this.theme,
@@ -123,16 +126,18 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: widget.showSearchField
               ? TextField(
                   controller: _searchController,
-                  decoration: widget.theme?.inputDecoration ?? InputDecoration(
-                    labelText: widget.searchHint ?? "Search",
-                    hintText: widget.searchHint ?? "Search",
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: const Color(0xFF8C98A8).withOpacity(0.2),
+                  autocorrect: widget.textFieldAutoCorrect,
+                  decoration: widget.theme?.inputDecoration ??
+                      InputDecoration(
+                        labelText: widget.searchHint ?? "Search",
+                        hintText: widget.searchHint ?? "Search",
+                        prefixIcon: const Icon(Icons.search),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: const Color(0xFF8C98A8).withOpacity(0.2),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
                   onChanged: _filterSearchResults,
                 )
               : Container(),
