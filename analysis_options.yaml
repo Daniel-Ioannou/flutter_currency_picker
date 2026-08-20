@@ -1,4 +1,4 @@
-include: package:lint/analysis_options_package.yaml
+include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
@@ -18,5 +18,13 @@ linter:
 analyzer:
   errors:
     missing_required_param: error
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
   language:
     strict-casts: false

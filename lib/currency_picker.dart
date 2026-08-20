@@ -1,6 +1,6 @@
 library currency_picker;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'src/currency.dart';
 import 'src/currency_list_bottom_sheet.dart' as currency_list;
