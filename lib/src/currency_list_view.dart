@@ -1,5 +1,5 @@
 import 'package:currency_picker/src/extensions.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'currency.dart';
 import 'currency_picker_theme_data.dart';
